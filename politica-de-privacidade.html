@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Política de Privacidade — LARUN</title>
+  <meta name="description" content="Política de Privacidade do Estúdio LARUN. Saiba como coletamos, usamos e protegemos seus dados pessoais.">
+  <meta name="robots" content="noindex, follow">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@900&family=Poppins:wght@600&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --color-green: #91C84B;
+      --color-blue: #0537A0;
+      --color-deep: #03163B;
+      --color-white: #FFFFFF;
+      --color-bg: #F5F6F8;
+      --text-strong: #0D1B2A;
+      --text-body: #3A4553;
+      --text-muted: #6B7685;
+      --font-display: 'Rubik', sans-serif;
+      --font-ui: 'Poppins', sans-serif;
+      --font-body: 'Lato', sans-serif;
+      --radius-card: 20px;
+      --max-width: 760px;
+    }
+    html { font-size: 16px; scroll-behavior: smooth; }
+    body {
+      font-family: var(--font-body);
+      color: var(--text-body);
+      background: var(--color-bg);
+      line-height: 1.7;
+    }
+    img { max-width: 100%; display: block; }
+    a { color: var(--color-blue); text-decoration: underline; }
+    a:hover { color: var(--color-green); }
+
+    /* ── HEADER ── */
+    .pp-header {
+      background: var(--color-deep);
+      padding: 20px 24px;
+    }
+    .pp-header-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+    .pp-header img { height: 52px; width: auto; }
+    .pp-header-back {
+      font-family: var(--font-ui);
+      font-weight: 600;
+      font-size: 0.82rem;
+      color: rgba(255,255,255,0.7);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      transition: color 200ms;
+    }
+    .pp-header-back:hover { color: var(--color-green); }
+
+    /* ── HERO ── */
+    .pp-hero {
+      background: var(--color-deep);
+      padding: 48px 24px 56px;
+      text-align: center;
+    }
+    .pp-hero-eyebrow {
+      display: inline-block;
+      font-family: var(--font-ui);
+      font-weight: 600;
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      background: var(--color-green);
+      color: var(--text-strong);
+      padding: 5px 14px;
+      border-radius: 999px;
+      margin-bottom: 20px;
+    }
+    .pp-hero h1 {
+      font-family: var(--font-display);
+      font-weight: 900;
+      font-size: clamp(1.8rem, 5vw, 2.6rem);
+      color: var(--color-white);
+      line-height: 1.1;
+      margin-bottom: 16px;
+    }
+    .pp-hero p {
+      font-family: var(--font-body);
+      font-size: 0.95rem;
+      color: rgba(255,255,255,0.62);
+      max-width: 480px;
+      margin: 0 auto;
+    }
+
+    /* ── CONTENT ── */
+    .pp-content {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 56px 24px 80px;
+    }
+    .pp-section {
+      background: var(--color-white);
+      border-radius: var(--radius-card);
+      padding: 36px 40px;
+      margin-bottom: 16px;
+    }
+    @media (max-width: 600px) {
+      .pp-section { padding: 28px 24px; }
+    }
+    .pp-section h2 {
+      font-family: var(--font-display);
+      font-weight: 900;
+      font-size: 1.2rem;
+      color: var(--text-strong);
+      margin-bottom: 14px;
+      padding-bottom: 12px;
+      border-bottom: 2px solid var(--color-bg);
+    }
+    .pp-section h2 span {
+      display: inline-block;
+      background: var(--color-blue);
+      color: var(--color-white);
+      font-family: var(--font-ui);
+      font-weight: 600;
+      font-size: 0.65rem;
+      padding: 2px 8px;
+      border-radius: 999px;
+      vertical-align: middle;
+      margin-right: 8px;
+      letter-spacing: 0.04em;
+    }
+    .pp-section p {
+      font-size: 0.95rem;
+      color: var(--text-body);
+      margin-bottom: 12px;
+      line-height: 1.75;
+    }
+    .pp-section p:last-child { margin-bottom: 0; }
+    .pp-section ul {
+      list-style: none;
+      padding: 0;
+      margin: 8px 0 12px;
+    }
+    .pp-section ul li {
+      font-size: 0.95rem;
+      color: var(--text-body);
+      padding: 6px 0 6px 20px;
+      position: relative;
+      line-height: 1.6;
+    }
+    .pp-section ul li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 14px;
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--color-green);
+    }
+    .pp-section strong { color: var(--text-strong); font-weight: 700; }
+
+    /* ── UPDATE DATE ── */
+    .pp-update {
+      text-align: center;
+      font-family: var(--font-ui);
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      margin-bottom: 40px;
+    }
+
+    /* ── FOOTER ── */
+    .pp-footer {
+      background: var(--color-deep);
+      padding: 32px 24px;
+      text-align: center;
+    }
+    .pp-footer img { height: 40px; margin: 0 auto 16px; }
+    .pp-footer p {
+      font-family: var(--font-ui);
+      font-size: 0.78rem;
+      color: rgba(255,255,255,0.45);
+    }
+    .pp-footer a {
+      color: rgba(255,255,255,0.6);
+      text-decoration: none;
+    }
+    .pp-footer a:hover { color: var(--color-green); }
+  </style>
+</head>
+<body>
+
+  <header class="pp-header">
+    <div class="pp-header-inner">
+      <a href="index.html">
+        <img src="assets/larun-horizontal-onblue.png" alt="LARUN" height="52">
+      </a>
+      <a href="index.html" class="pp-header-back">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+        Voltar ao site
+      </a>
+    </div>
+  </header>
+
+  <div class="pp-hero">
+    <span class="pp-hero-eyebrow">Transparência &amp; LGPD</span>
+    <h1>Política de Privacidade</h1>
+    <p>Como coletamos, usamos e protegemos seus dados pessoais.</p>
+  </div>
+
+  <main class="pp-content">
+
+    <p class="pp-update">Última atualização: junho de 2026</p>
+
+    <div class="pp-section">
+      <h2><span>01</span> Apresentação</h2>
+      <p>A <strong>LARUN</strong> prioriza a privacidade, a segurança das informações e o respeito aos dados pessoais de seus usuários e alunos. Todas as nossas práticas estão em conformidade com a <strong>Lei Geral de Proteção de Dados (LGPD — Lei nº 13.709/2018)</strong>.</p>
+      <p>Esta política descreve como coletamos, utilizamos, armazenamos e protegemos seus dados, bem como os seus direitos como titular dessas informações.</p>
+    </div>
+
+    <div class="pp-section">
+      <h2><span>02</span> Quem Somos</h2>
+      <p>O <strong>Estúdio LARUN</strong> é um espaço especializado em preparação física para corredores, localizado em São Bernardo do Campo, SP. Nossos serviços incluem:</p>
+      <ul>
+        <li>Assessoria de corrida e preparação física</li>
+        <li>Treinamento funcional direcionado ao corredor</li>
+        <li>Avaliações biomecânicas e análise técnica de corrida</li>
+        <li>Organização de eventos esportivos</li>
+        <li>Programas de saúde e condicionamento</li>
+      </ul>
+      <p>Nosso objetivo é promover saúde, evolução esportiva e transformação humana por meio do método LARUN.</p>
+    </div>
+
+    <div class="pp-section">
+      <h2><span>03</span> Dados que Coletamos</h2>
+      <p><strong>Dados de identificação:</strong></p>
+      <ul>
+        <li>Nome completo, data de nascimento e CPF</li>
+        <li>Sexo, telefone e e-mail</li>
+        <li>Endereço completo</li>
+      </ul>
+      <p><strong>Dados esportivos e de saúde:</strong></p>
+      <ul>
+        <li>Histórico esportivo e lesões anteriores</li>
+        <li>Objetivos de corrida e anamnese</li>
+        <li>Avaliações físicas e dados antropométricos</li>
+        <li>Dados de desempenho e evolução nos treinos</li>
+      </ul>
+      <p><strong>Dados de navegação:</strong></p>
+      <ul>
+        <li>Endereço IP e tipo de navegador</li>
+        <li>Sistema operacional e tempo de permanência no site</li>
+        <li>Páginas acessadas e cookies</li>
+      </ul>
+    </div>
+
+    <div class="pp-section">
+      <h2><span>04</span> Finalidades de Uso</h2>
+      <p>Utilizamos seus dados exclusivamente para as seguintes finalidades:</p>
+      <ul>
+        <li>Atendimento, agendamentos e comunicação com alunos</li>
+        <li>Prescrição e monitoramento de treinamento individualizado</li>
+        <li>Comunicações institucionais e informações sobre o método</li>
+        <li>Gestão financeira e administrativa interna</li>
+        <li>Ações de marketing e relacionamento, mediante autorização expressa</li>
+      </ul>
+    </div>
+
+    <div class="pp-section">
+      <h2><span>05</span> Uso de Imagem</h2>
+      <p>Fotografias e vídeos captados durante treinos e eventos do Estúdio LARUN podem ser utilizados em redes sociais, materiais promocionais e institucionais, sempre com o objetivo de divulgar o trabalho realizado e os resultados dos alunos.</p>
+      <p>A qualquer momento, você pode solicitar a remoção de sua imagem entrando em contato conosco pelos canais listados no final desta política.</p>
+    </div>
+
+    <div class="pp-section">
+      <h2><span>06</span> Compartilhamento de Dados</h2>
+      <p>A LARUN <strong>não comercializa dados pessoais</strong> de seus alunos ou usuários. O compartilhamento ocorre apenas quando necessário e nos seguintes contextos:</p>
+      <ul>
+        <li>Profissionais da equipe diretamente envolvidos no seu atendimento</li>
+        <li>Sistemas de gestão e plataformas tecnológicas utilizadas internamente</li>
+        <li>Prestadores de serviços contratados para suporte operacional</li>
+        <li>Instituições financeiras para processamento de pagamentos</li>
+      </ul>
+      <p>Em todos os casos, os terceiros recebem apenas os dados estritamente necessários e estão sujeitos a obrigações de confidencialidade.</p>
+    </div>
+
+    <div class="pp-section">
+      <h2><span>07</span> Armazenamento e Segurança</h2>
+      <p>Adotamos medidas técnicas e administrativas para proteger seus dados contra acessos não autorizados, perda, alteração ou divulgação indevida. Isso inclui controle de acesso, criptografia e auditorias periódicas.</p>
+      <p>Reconhecemos, contudo, que nenhum sistema é totalmente imune a riscos. Em caso de incidente que possa afetar seus dados, você será notificado conforme determinado pela LGPD.</p>
+    </div>
+
+    <div class="pp-section">
+      <h2><span>08</span> Seus Direitos como Titular</h2>
+      <p>Conforme a LGPD, você tem direito a:</p>
+      <ul>
+        <li>Confirmar a existência de tratamento dos seus dados</li>
+        <li>Acessar os dados que temos sobre você</li>
+        <li>Corrigir dados incompletos, inexatos ou desatualizados</li>
+        <li>Solicitar a exclusão de dados desnecessários ou tratados em desconformidade</li>
+        <li>Revogar o consentimento dado para uso dos seus dados</li>
+        <li>Solicitar portabilidade dos dados para outro fornecedor</li>
+      </ul>
+      <p>Para exercer qualquer um desses direitos, entre em contato pelos canais listados abaixo.</p>
+    </div>
+
+    <div class="pp-section">
+      <h2><span>09</span> Cookies</h2>
+      <p>Utilizamos cookies para melhorar a experiência de navegação no nosso site, analisar o tráfego e personalizar conteúdos. Os cookies não coletam dados pessoais sensíveis.</p>
+      <p>Você pode gerenciar ou desativar os cookies diretamente nas configurações do seu navegador. A desativação pode afetar o funcionamento de algumas funcionalidades do site.</p>
+    </div>
+
+    <div class="pp-section">
+      <h2><span>10</span> Alterações nesta Política</h2>
+      <p>Esta política pode ser atualizada periodicamente para refletir mudanças em nossas práticas ou na legislação aplicável. A versão mais recente estará sempre disponível nesta página, com a data da última atualização indicada no topo.</p>
+      <p>Recomendamos que você a revise regularmente.</p>
+    </div>
+
+    <div class="pp-section">
+      <h2><span>11</span> Contato</h2>
+      <p>Para dúvidas, solicitações ou exercício dos seus direitos relacionados a esta política, entre em contato:</p>
+      <ul>
+        <li><strong>WhatsApp:</strong> <a href="https://wa.me/5519971439283" target="_blank" rel="noopener">(19) 97143-9283</a></li>
+        <li><strong>E-mail:</strong> <a href="mailto:contato@assessorialea.com.br">contato@assessorialea.com.br</a></li>
+        <li><strong>Instagram:</strong> <a href="https://instagram.com/larunestudio" target="_blank" rel="noopener">@larunestudio</a></li>
+        <li><strong>Endereço:</strong> R. Vinte e Oito de Outubro, 72 — Centro, São Bernardo do Campo, SP</li>
+      </ul>
+    </div>
+
+  </main>
+
+  <footer class="pp-footer">
+    <img src="assets/larun-horizontal-onblue.png" alt="LARUN">
+    <p>© 2026 LARUN · Preparação Física para Corredores</p>
+    <p style="margin-top:6px;"><a href="index.html">Voltar ao site principal</a></p>
+  </footer>
+
+</body>
+</html>

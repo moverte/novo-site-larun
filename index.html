@@ -1,0 +1,3753 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LARUN — Corra Sem Quebrar</title>
+<meta name="description" content="Método LARUN: evolução estruturada e presencial, com diagnóstico antes da prescrição. Estúdio e Grupo de Corrida em São Bernardo do Campo. Corra Sem Quebrar.">
+
+<!-- Open Graph -->
+<meta property="og:title" content="LARUN — Corra Sem Quebrar">
+<meta property="og:description" content="Método LARUN: evolução estruturada e presencial, com diagnóstico antes da prescrição. Estúdio e Grupo de Corrida em São Bernardo do Campo.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="assets/hero-leandro.png">
+<meta property="og:url" content="https://larun.com.br/">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="LARUN — Corra Sem Quebrar">
+<meta name="twitter:description" content="Método LARUN: evolução estruturada e presencial, com diagnóstico antes da prescrição.">
+<meta name="twitter:image" content="assets/hero-leandro.png">
+
+<!-- Favicon: assets/larun-mark.png usado como referência. TODO: gerar um favicon.ico/png dedicado em múltiplos tamanhos para melhor nitidez. -->
+<link rel="icon" type="image/png" href="assets/larun-mark.png">
+
+<!-- Preload da imagem hero (LCP provável da página) -->
+<link rel="preload" href="assets/hero-leandro.png" as="image">
+
+<!-- Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Rubik:wght@800;900&family=Poppins:wght@600&family=Lato:wght@400&display=swap" rel="stylesheet">
+
+<!-- JSON-LD: LocalBusiness -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "LARUN",
+  "description": "Estúdio e Grupo de Corrida. Método LARUN: evolução estruturada, presencial, com diagnóstico antes da prescrição.",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "R. Vinte e Oito de Outubro, 72, Centro",
+    "addressLocality": "São Bernardo do Campo",
+    "addressRegion": "SP",
+    "addressCountry": "BR"
+  },
+  "telephone": "+5519971439283",
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+      "opens": "05:30",
+      "closes": "10:00"
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+      "opens": "16:00",
+      "closes": "21:00"
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Saturday"],
+      "opens": "07:00",
+      "closes": "11:00"
+    }
+  ]
+}
+</script>
+
+<!-- Google Analytics 4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>
+  // TODO: substituir pelo Measurement ID real
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-XXXXXXXXXX');
+</script>
+
+<!-- Meta Pixel -->
+<script>
+  // TODO: substituir pelo Pixel ID real
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '491056433970344');
+  fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+  src="https://www.facebook.com/tr?id=491056433970344&ev=PageView&noscript=1"
+/></noscript>
+
+<style>
+  /* ===== RESET ===== */
+  *, *::before, *::after { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body, h1, h2, h3, h4, p, figure, blockquote { margin: 0; }
+  ul, ol { margin: 0; padding: 0; }
+  img, picture { max-width: 100%; display: block; }
+  button { font: inherit; }
+
+  /* ===== CUSTOM PROPERTIES ===== */
+  :root {
+    /* Cores */
+    --color-green: #91C84B;
+    --color-blue: #0537A0;
+    --color-deep: #03163B;
+    --color-white: #FFFFFF;
+    --color-bg-neutral: #F5F6F8;
+    --color-border: #E4E6EB;
+    --text-strong: #03163B;
+    --text-muted: #5B6472;
+
+    /* Tipografia */
+    --font-display: 'Rubik', sans-serif;
+    --font-ui: 'Poppins', sans-serif;
+    --font-body: 'Lato', sans-serif;
+
+    /* Spacing */
+    --space-xs: 8px;
+    --space-sm: 16px;
+    --space-md: 24px;
+    --space-lg: 48px;
+    --space-xl: 80px;
+    --space-2xl: 120px;
+
+    /* Shape */
+    --radius-card: 24px;
+    --radius-pill: 999px;
+
+    /* Motion */
+    --ease-base: cubic-bezier(0.22, 1, 0.36, 1);
+    --duration-base: 420ms;
+
+    /* Sombra com tinte azul */
+    --shadow-soft: 0 8px 24px rgba(5, 55, 160, 0.08);
+    --shadow-elevated: 0 16px 40px rgba(5, 55, 160, 0.14);
+  }
+
+  html, body { overflow-x: hidden; }
+  body {
+    font-family: var(--font-body);
+    color: var(--text-strong);
+    line-height: 1.65;
+    background: var(--color-white);
+  }
+
+  h1, h2, h3, h4 {
+    font-family: var(--font-display);
+    font-weight: 900;
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+  }
+
+  .eyebrow {
+    font-family: var(--font-ui);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-size: 0.92rem;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.001ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.001ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+
+  /* ===== BOTÕES (uso global) ===== */
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-ui);
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-decoration: none;
+    cursor: pointer;
+    border: none;
+    white-space: nowrap;
+    transition: transform 200ms var(--ease-base), box-shadow 200ms var(--ease-base), background 200ms;
+  }
+  .btn-pill { border-radius: var(--radius-pill); padding: 14px 28px; }
+  .btn-blue { background: var(--color-blue); color: var(--color-white); }
+  .btn-blue:hover { box-shadow: var(--shadow-elevated); transform: translateY(-2px); }
+  .btn-green { background: var(--color-green); color: var(--text-strong); }
+  .btn-green:hover { box-shadow: var(--shadow-elevated); transform: translateY(-2px); }
+  .btn-outline-blue { background: transparent; border: 2px solid var(--color-blue); color: var(--color-blue); }
+  .btn-outline-blue:hover { background: var(--color-blue); color: var(--color-white); }
+  .btn-outline-white { background: transparent; border: 2px solid var(--color-white); color: var(--color-white); }
+  .btn-outline-white:hover { background: var(--color-white); color: var(--color-deep); }
+
+  /* ===== HEADER ===== */
+  .site-header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: var(--color-white);
+    padding: 14px 0;
+    transition: padding var(--duration-base) var(--ease-base), box-shadow var(--duration-base) var(--ease-base);
+  }
+  .site-header.scrolled {
+    padding: 10px 0;
+    box-shadow: var(--shadow-soft);
+  }
+  .header-inner {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+  }
+  .header-logo { display: flex; align-items: center; flex-shrink: 0; }
+  .header-logo img { height: 100px; width: auto; }
+  .header-right {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+  }
+  .header-nav {
+    display: flex;
+    gap: 26px;
+    font-family: var(--font-ui);
+    font-weight: 600;
+    font-size: 0.92rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+  .header-nav a {
+    text-decoration: none;
+    color: var(--text-strong);
+    transition: color 200ms;
+  }
+  .header-nav a:hover { color: var(--color-blue); }
+
+  .header-burger {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    width: 32px;
+    height: 32px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+  }
+  .header-burger span {
+    display: block;
+    width: 100%;
+    height: 2px;
+    background: var(--text-strong);
+    transition: transform 250ms var(--ease-base), opacity 250ms var(--ease-base);
+  }
+  .header-burger.active span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .header-burger.active span:nth-child(2) { opacity: 0; }
+  .header-burger.active span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+  @media (max-width: 880px) {
+    .header-right { display: none; }
+    .header-burger { display: flex; }
+  }
+
+  /* ===== DRAWER MOBILE ===== */
+  .drawer-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(3, 22, 59, 0.5);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 300ms var(--ease-base), visibility 300ms;
+    z-index: 1100;
+  }
+  .drawer-overlay.active { opacity: 1; visibility: visible; }
+
+  .mobile-drawer {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: min(80vw, 320px);
+    background: var(--color-white);
+    z-index: 1200;
+    padding: 32px 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    transform: translateX(100%);
+    transition: transform 300ms var(--ease-base);
+    box-shadow: var(--shadow-elevated);
+  }
+  .mobile-drawer.active { transform: translateX(0); }
+
+  .drawer-close {
+    align-self: flex-end;
+    background: none;
+    border: none;
+    font-size: 2rem;
+    line-height: 1;
+    cursor: pointer;
+    color: var(--text-strong);
+  }
+  .drawer-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+    font-family: var(--font-ui);
+    font-weight: 600;
+    font-size: 1.05rem;
+  }
+  .drawer-nav a { text-decoration: none; color: var(--text-strong); }
+  .drawer-cta { align-self: stretch; text-align: center; }
+
+  /* ===== HERO ===== */
+  .hero {
+    position: relative;
+    overflow: hidden;
+    background: var(--color-white);
+    padding: 56px 0 64px;
+  }
+  .hero-photo-bg { display: none; }
+  .hero-inner {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+  .hero-content { max-width: 560px; }
+
+  .hero-eyebrow {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--color-blue);
+    margin-bottom: 18px;
+  }
+  .eyebrow-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--color-green);
+    flex-shrink: 0;
+  }
+
+  .hero-headline {
+    font-family: var(--font-display);
+    font-weight: 900;
+    font-size: clamp(2.1rem, 5.5vw, 3.6rem);
+    line-height: 1.14;
+    letter-spacing: -0.02em;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    margin-bottom: 32px;
+  }
+  .hero-line {
+    display: block;
+    color: var(--color-blue);
+    text-transform: uppercase;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity var(--duration-base) var(--ease-base), transform var(--duration-base) var(--ease-base);
+    transition-delay: var(--delay, 0ms);
+  }
+  .hero-headline.in-view .hero-line {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .hero-line-accent { color: var(--color-green); text-transform: none; }
+
+  .hero-identity-cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 32px;
+  }
+  .hero-identity-card {
+    flex: 1 1 140px;
+    padding: 10px 14px;
+    border-left: 3px solid var(--color-green);
+    background: rgba(255, 255, 255, 0.75);
+    backdrop-filter: blur(6px);
+    border-radius: 12px;
+    box-shadow: var(--shadow-soft);
+  }
+  @media (max-width: 540px) {
+    .hero-identity-cards { flex-direction: column; }
+    .hero-identity-card { flex: 0 0 auto; }
+  }
+  .hero-identity-card h3 {
+    font-family: var(--font-ui);
+    font-weight: 600;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--color-blue);
+    margin: 0 0 4px;
+  }
+  .hero-identity-card p {
+    font-family: var(--font-body);
+    font-size: 0.88rem;
+    line-height: 1.4;
+    color: var(--text-strong);
+    margin: 0;
+  }
+
+  .hero-ctas {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+  }
+
+  .hero-trust {
+    font-family: var(--font-body);
+    font-size: 0.97rem;
+    color: var(--text-muted);
+  }
+
+  .hero-photo-mobile {
+    margin-top: 32px;
+    border-radius: 20px;
+    overflow: hidden;
+    position: relative;
+  }
+  .hero-photo-mobile img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 3 / 4;
+    object-fit: cover;
+    object-position: center top;
+    display: block;
+  }
+  .hero-callout {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    background: rgba(255, 255, 255, 0.92);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border-radius: var(--radius-pill);
+    padding: 5px 12px 5px 5px;
+    box-shadow: 0 4px 20px rgba(3, 22, 59, 0.22);
+    pointer-events: none;
+    animation: callout-in 500ms var(--ease-base) both;
+  }
+  .hero-callout:nth-child(2) { animation-delay: 600ms; }
+  .hero-callout:nth-child(3) { animation-delay: 800ms; }
+  .hero-callout:nth-child(4) { animation-delay: 1000ms; }
+  @keyframes callout-in {
+    from { opacity: 0; transform: scale(0.8); }
+    to   { opacity: 1; transform: scale(1); }
+  }
+  .hero-callout-icon {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: var(--color-green);
+    color: var(--text-strong);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+  .hero-callout-label {
+    font-family: var(--font-ui);
+    font-weight: 600;
+    font-size: 0.7rem;
+    color: var(--text-strong);
+    white-space: nowrap;
+  }
+  .hero-callouts-desktop { display: none; }
+
+  @media (min-width: 881px) {
+    .hero-callouts-desktop {
+      display: block;
+      position: absolute;
+      inset: 0;
+      z-index: 2;
+      pointer-events: none;
+    }
+    .hero-callouts-desktop .hero-callout {
+      padding: 6px 14px 6px 6px;
+      gap: 8px;
+    }
+    .hero-callouts-desktop .hero-callout-icon {
+      width: 28px;
+      height: 28px;
+    }
+    .hero-callouts-desktop .hero-callout-label {
+      font-size: 0.78rem;
+    }
+  }
+
+  @media (min-width: 881px) {
+    .hero {
+      min-height: 620px;
+      display: flex;
+      align-items: center;
+    }
+    .hero-photo-bg {
+      display: block;
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      background-image: url('assets/hero-leandro.png');
+      background-size: cover;
+      background-position: 78% center;
+    }
+    .hero-photo-bg::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(90deg, var(--color-white) 0%, var(--color-white) 44%, rgba(255, 255, 255, 0) 62%);
+    }
+    .hero-photo-mobile { display: none; }
+  }
+
+  /* ===== POSICIONAMENTO ===== */
+  .posicionamento {
+    position: relative;
+    overflow: hidden;
+    background: var(--color-deep);
+    padding-top: var(--space-2xl);
+    text-align: center;
+    color: var(--color-white);
+  }
+  @media (max-width: 680px) {
+    .posicionamento { padding-top: 56px; }
+  }
+  .posicionamento-watermark {
+    position: absolute;
+    top: 50%;
+    right: -5%;
+    transform: translateY(-50%);
+    width: 480px;
+    max-width: 60%;
+    opacity: 0.06;
+    pointer-events: none;
+    user-select: none;
+  }
+  .posicionamento-inner {
+    position: relative;
+    z-index: 1;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 24px 56px;
+  }
+
+  /* foto na base do bloco azul */
+  .posicionamento-photo-strip {
+    position: relative;
+    width: 100%;
+    height: clamp(110px, 16vw, 200px);
+    overflow: hidden;
+  }
+  .posicionamento-photo-strip img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 65%;
+    display: block;
+  }
+  .posicionamento-photo-strip::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    background: linear-gradient(to bottom, var(--color-deep) 0%, rgba(3, 22, 59, 0) 55%);
+  }
+  .posicionamento-eyebrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    color: var(--color-green);
+    margin-bottom: 24px;
+  }
+  .posicionamento-eyebrow svg { flex-shrink: 0; }
+  .posicionamento-headline {
+    font-family: var(--font-display);
+    font-weight: 900;
+    font-size: clamp(2.6rem, 7.5vw, 6rem);
+    letter-spacing: -0.02em;
+    line-height: 1.05;
+    white-space: nowrap;
+    margin-bottom: 28px;
+  }
+  .posicionamento-subtext {
+    font-family: var(--font-body);
+    font-size: 1.15rem;
+    line-height: 1.65;
+    color: rgba(255, 255, 255, 0.82);
+    max-width: 700px;
+    margin: 0 auto 40px;
+  }
+  .posicionamento-subtext strong { color: var(--color-white); }
+  .posicionamento-ctas {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    flex-wrap: wrap;
+    margin-bottom: 24px;
+  }
+  .posicionamento-ctas .btn { display: inline-flex; align-items: center; gap: 8px; }
+  .posicionamento-trust {
+    font-family: var(--font-body);
+    font-size: 0.97rem;
+    color: rgba(255, 255, 255, 0.65);
+  }
+
+  @media (max-width: 680px) {
+    .posicionamento-headline { white-space: normal; }
+  }
+
+  /* ===== NÚMEROS ===== */
+  .numeros {
+    background: var(--color-white);
+    padding: 64px 24px;
+    border-bottom: 1px solid var(--color-border);
+  }
+  .numeros-inner {
+    max-width: 1120px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 32px;
+    text-align: center;
+  }
+  .numero-value {
+    display: block;
+    font-family: var(--font-display);
+    font-weight: 900;
+    font-size: clamp(2.4rem, 4vw, 3.2rem);
+    color: var(--color-blue);
+    line-height: 1;
+    margin-bottom: 8px;
+  }
+  .numero-label {
+    font-family: var(--font-ui);
+    font-weight: 600;
+    font-size: 0.92rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--text-muted);
+  }
+  @media (max-width: 680px) {
+    .numeros-inner {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 32px 16px;
+    }
+  }
+
+  /* ===== MÉTODO — 5 PILARES ===== */
+  .metodo {
+    background: var(--color-bg-neutral);
+    padding: var(--space-2xl) 24px;
+  }
+  @media (max-width: 680px) {
+    .metodo { padding: 56px 24px; }
+  }
+  .metodo-inner {
+    max-width: 1080px;
+    margin: 0 auto;
+  }
+  .metodo-header {
+    text-align: center;
+    max-width: 640px;
+    margin: 0 auto var(--space-lg);
+  }
+  .metodo-eyebrow {
+    display: block;
+    color: var(--color-blue);
+    margin-bottom: 16px;
+  }
+  .metodo-headline {
+    font-size: clamp(1.9rem, 4vw, 2.7rem);
+    color: var(--text-strong);
+  }
+
+  .pilares-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 24px;
+  }
+
+  .pilar-card {
+    background: var(--color-white);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-card);
+    padding: 32px 28px;
+    transition: transform 200ms var(--ease-base), box-shadow 200ms var(--ease-base);
+  }
+  .pilar-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-elevated);
+  }
+  .pilar-numero {
+    display: block;
+    font-family: var(--font-display);
+    font-weight: 900;
+    font-size: 2.6rem;
+    color: var(--color-green);
+    line-height: 1;
+    margin-bottom: 16px;
+  }
+  .pilar-card h3 {
+    font-family: var(--font-display);
+    font-weight: 900;
+    font-size: 1.2rem;
+    letter-spacing: -0.01em;
+    color: var(--text-strong);
+    margin-bottom: 12px;
+  }
+  .pilar-card p {
+    font-family: var(--font-body);
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--text-muted);
+  }
+
+  .pilar-resultado {
+    background: var(--color-deep);
+    border: none;
+    color: var(--color-white);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .pilar-resultado-icon {
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    background: rgba(145, 200, 75, 0.15);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-green);
+    margin-bottom: 16px;
+  }
+  .pilar-resultado h3 {
+    color: var(--color-green);
+    font-size: 1.4rem;
+    margin-bottom: 12px;
+  }
+  .pilar-resultado p {
+    color: rgba(255, 255, 255, 0.78);
+  }
+
+  @media (max-width: 360px) {
+    .pilares-grid { grid-template-columns: 1fr; }
+  }
+
+  /* ===== LEANDRO ===== */
+  .leandro {
+    background: var(--color-deep);
+    padding: var(--space-2xl) 24px;
+    color: var(--color-white);
+  }
+  @media (max-width: 680px) {
+    .leandro { padding: 56px 24px; }
+  }
+  .leandro-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 56px;
+    align-items: center;
+  }
+  .leandro-eyebrow {
+    display: block;
+    color: var(--color-green);
+    margin-bottom: 16px;
+  }
+  .leandro-headline {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    margin-bottom: 28px;
+  }
+  .leandro-line {
+    display: block;
+    font-family: var(--font-display);
+    font-weight: 900;
+    font-size: clamp(1.8rem, 3.4vw, 2.6rem);
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+    color: var(--color-white);
+  }
+  .leandro-line-accent {
+    color: var(--color-green);
+    margin-top: 14px;
+  }
+  .leandro-text p {
+    font-family: var(--font-body);
+    font-size: 1.02rem;
+    line-height: 1.7;
+    color: rgba(255, 255, 255, 0.82);
+    margin-bottom: 18px;
+  }
+  .leandro-text p strong {
+    color: var(--color-white);
+    font-weight: 700;
+  }
+  .leandro-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 24px;
+  }
+  .leandro-tag {
+    font-family: var(--font-ui);
+    font-weight: 600;
+    font-size: 0.85rem;
+    padding: 9px 18px;
+    border-radius: var(--radius-pill);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    color: rgba(255, 255, 255, 0.88);
+  }
+  .leandro-photo-wrap {
+    position: relative;
+    display: flex;
+    justify-content: center;
+  }
+  .leandro-photo-wrap::before {
+    content: '';
+    position: absolute;
+    width: 72%;
+    height: 72%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: radial-gradient(circle, rgba(145, 200, 75, 0.38), transparent 70%);
+    filter: blur(24px);
+    z-index: 0;
+  }
+  .leandro-photo-wrap img {
+    position: relative;
+    z-index: 1;
+    max-width: 380px;
+    width: 100%;
+    filter: drop-shadow(0 24px 40px rgba(0, 0, 0, 0.4));
+  }
+
+  @media (max-width: 880px) {
+    .leandro-inner {
+      grid-template-columns: 1fr;
+      gap: 32px;
+      text-align: center;
+    }
+    .leandro-photo-wrap { order: -1; }
+    .leandro-tags { justify-content: center; }
+  }
+
+  /* ===== FASES DO CORREDOR ===== */
+  .fases {
+    background: var(--color-bg-neutral);
+    padding: var(--space-2xl) 24px;
+  }
+  .fases-inner {
+    max-width: 1080px;
+    margin: 0 auto;
+  }
+  .fases-header {
+    text-align: center;
+    max-width: 640px;
+    margin: 0 auto var(--space-lg);
+  }
+  .fases-eyebrow {
+    display: block;
+    color: var(--color-blue);
+    margin-bottom: 16px;
+  }
+  .fases-headline {
+    font-size: clamp(1.9rem, 4vw, 2.7rem);
+    color: var(--text-strong);
+  }
+
+  .fases-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-bottom: 48px;
+  }
+  .fases-tabs-hint {
+    text-align: center;
+    font-family: var(--font-body);
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    margin-bottom: 10px;
+    letter-spacing: 0.02em;
+  }
+  @media (max-width: 540px) {
+    .fases-tabs { flex-wrap: nowrap; gap: 8px; }
+    .fase-tab { font-size: 0.78rem; padding: 10px 14px; }
+  }
+  .fase-tab {
+    font-family: var(--font-ui);
+    font-weight: 600;
+    font-size: 0.92rem;
+    padding: 12px 24px;
+    border-radius: var(--radius-pill);
+    border: 1px solid var(--color-border);
+    background: var(--color-white);
+    color: var(--text-strong);
+    cursor: pointer;
+    transition: background 200ms var(--ease-base), color 200ms var(--ease-base), border-color 200ms var(--ease-base);
+  }
+  .fase-tab:hover { border-color: var(--color-blue); color: var(--color-blue); }
+  .fase-tab.active {
+    background: var(--color-blue);
+    border-color: var(--color-blue);
+    color: var(--color-white);
+  }
+
+  .fase-panel {
+    display: none;
+    opacity: 0;
+    transition: opacity 200ms ease;
+  }
+  .fase-panel.active { display: block; }
+  .fase-panel.active.visible { opacity: 1; }
+
+  .fase-identidade {
+    font-family: var(--font-body);
+    font-style: italic;
+    font-size: clamp(1.3rem, 2.6vw, 1.7rem);
+    line-height: 1.5;
+    color: var(--text-strong);
+    max-width: 760px;
+    margin-bottom: 32px;
+  }
+
+  .fase-pontos {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    margin-bottom: 32px;
+  }
+  .fase-ponto {
+    border-radius: 18px;
+    padding: 28px;
+  }
+  .fase-ponto-a {
+    background: rgba(5, 55, 160, 0.06);
+    border-left: 3px solid var(--color-blue);
+  }
+  .fase-ponto-b {
+    background: rgba(145, 200, 75, 0.14);
+    border-left: 3px solid var(--color-green);
+  }
+  .fase-ponto-label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-family: var(--font-ui);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    font-size: 0.85rem;
+    color: var(--text-strong);
+    margin-bottom: 14px;
+  }
+  .fase-ponto-label::before {
+    content: '';
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+  .fase-ponto-a .fase-ponto-label::before { background: var(--color-blue); }
+  .fase-ponto-b .fase-ponto-label::before { background: var(--color-green); }
+  .fase-ponto p {
+    font-family: var(--font-body);
+    font-size: 0.98rem;
+    line-height: 1.6;
+    color: var(--text-strong);
+  }
+
+  .fase-raiox {
+    background: var(--color-deep);
+    border-radius: var(--radius-card);
+    padding: 28px 32px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    flex-wrap: wrap;
+  }
+  .fase-raiox p {
+    font-family: var(--font-body);
+    font-size: 0.98rem;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.85);
+    flex: 1 1 420px;
+    margin: 0;
+  }
+  .fase-raiox strong { color: var(--color-green); }
+
+  @media (max-width: 680px) {
+    .fase-pontos { grid-template-columns: 1fr; }
+    .fase-raiox { flex-direction: column; align-items: flex-start; justify-content: flex-start; gap: 20px; }
+    .fase-raiox p { flex: none; }
+  }
+
+  /* ===== BLOCO 7: GALERIA DO ESTÚDIO ===== */
+  .estudio {
+    background: var(--color-white);
+    padding: var(--space-2xl) 24px;
+  }
+  @media (max-width: 680px) {
+    .estudio { padding: 56px 24px; }
+  }
+  .estudio-header {
+    text-align: center;
+    max-width: 620px;
+    margin: 0 auto var(--space-lg);
+  }
+  .estudio-header h2 {
+    font-family: var(--font-display);
+    font-weight: 900;
+    font-size: clamp(1.9rem, 4vw, 2.6rem);
+    color: var(--text-strong);
+    margin-bottom: 14px;
+  }
+  .estudio-header p {
+    font-family: var(--font-body);
+    font-size: 1.05rem;
+    color: var(--text-muted);
+  }
+
+  .estudio-gallery {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 20px;
+    padding-bottom: 4px;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .estudio-gallery::-webkit-scrollbar { display: none; }
+
+  .estudio-fig {
+    margin: 0;
+    border-radius: 20px;
+    overflow: hidden;
+    position: relative;
+    background: var(--color-bg-neutral);
+    flex: 0 0 calc(42% - 11px);
+    aspect-ratio: 4 / 3;
+    scroll-snap-align: start;
+    flex-shrink: 0;
+  }
+  .estudio-fig img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 300ms var(--ease-base);
+  }
+  .estudio-fig:hover img { transform: scale(1.02); }
+
+  .estudio-fig figcaption {
+    position: absolute;
+    left: 16px;
+    bottom: 16px;
+    background: rgba(3, 22, 59, 0.72);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    color: var(--color-white);
+    padding: 7px 14px;
+    border-radius: 999px;
+    font-family: var(--font-ui);
+    font-weight: 600;
+    font-size: 0.78rem;
+    letter-spacing: 0.01em;
+    pointer-events: none;
+  }
+
+  .estudio-dots {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 18px;
+  }
+  .estudio-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--color-border);
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    transition: background 200ms, transform 200ms;
+  }
+  .estudio-dot.active { background: var(--color-blue); transform: scale(1.3); }
+
+  @media (max-width: 880px) {
+    .estudio-fig { flex: 0 0 85%; }
+  }
+
+  /* ===== BLOCO 8: DEPOIMENTOS ===== */
+  .depoimentos {
+    background: var(--color-bg-neutral);
+    padding: var(--space-2xl) 24px;
+  }
+  @media (max-width: 680px) {
+    .depoimentos { padding: 56px 24px; }
+  }
+  .depoimentos-header {
+    text-align: center;
+    max-width: 680px;
+    margin: 0 auto var(--space-lg);
+  }
+  .depoimentos-eyebrow {
+    display: block;
+    color: var(--color-green);
+    margin-bottom: 16px;
+  }
+  .depoimentos-headline {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  .depoimentos-line {
+    font-family: var(--font-display);
+    font-weight: 900;
+    font-size: clamp(1.7rem, 3.6vw, 2.6rem);
+    line-height: 1.15;
+    color: var(--text-strong);
+  }
+  .depoimentos-line-accent { color: var(--color-green); }
+  .depoimentos-subtext {
+    font-family: var(--font-body);
+    font-size: 1.05rem;
+    color: var(--text-muted);
+    margin-top: 16px;
+  }
+
+  .depoimentos-grid {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 24px;
+  }
+  .depoimento-card {
+    background: var(--color-white);
+    border-radius: var(--radius-card);
+    box-shadow: var(--shadow-soft);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+  .depoimento-top {
+    display: flex;
+    gap: 16px;
+    padding: 20px;
+  }
+  .depoimento-avatar {
+    position: relative;
+    flex: 0 0 120px;
+    aspect-ratio: 1 / 1;
+    align-self: flex-start;
+    border-radius: 16px;
+    overflow: hidden;
+    background: linear-gradient(160deg, rgba(5, 55, 160, 0.1), rgba(145, 200, 75, 0.18));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-blue);
+  }
+  .depoimento-name {
+    position: absolute;
+    left: 8px;
+    bottom: 8px;
+    background: rgba(3, 22, 59, 0.7);
+    color: var(--color-white);
+    font-family: var(--font-ui);
+    font-weight: 600;
+    font-size: 0.62rem;
+    line-height: 1.2;
+    padding: 4px 9px;
+    border-radius: var(--radius-pill);
+    max-width: calc(100% - 16px);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .depoimento-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  .depoimento-content {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    flex: 1;
+    min-width: 0;
+  }
+  .depoimento-badge {
+    align-self: flex-start;
+    background: var(--color-green);
+    color: var(--text-strong);
+    font-family: var(--font-ui);
+    font-weight: 600;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    padding: 4px 12px;
+    border-radius: var(--radius-pill);
+  }
+  .depoimento-content h3 {
+    font-family: var(--font-display);
+    font-weight: 900;
+    font-size: 0.98rem;
+    line-height: 1.35;
+    text-transform: uppercase;
+    letter-spacing: -0.005em;
+    color: var(--text-strong);
+  }
+  .depoimento-desc {
+    font-family: var(--font-body);
+    font-size: 0.92rem;
+    line-height: 1.5;
+    color: var(--text-muted);
+  }
+  .depoimento-meta {
+    display: flex;
+    align-items: center;
+    background: var(--color-blue);
+    padding: 16px 20px;
+    margin-top: auto;
+  }
+  .depoimento-meta-item { flex: 1; min-width: 0; }
+  .depoimento-meta-divider {
+    width: 1px;
+    height: 32px;
+    background: rgba(255, 255, 255, 0.25);
+    margin: 0 18px;
+    flex-shrink: 0;
+  }
+  .depoimento-meta-label {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    color: rgba(255, 255, 255, 0.75);
+    margin-bottom: 4px;
+  }
+  .depoimento-meta-label svg { color: var(--color-green); flex-shrink: 0; }
+  .depoimento-meta-label span {
+    font-family: var(--font-ui);
+    font-weight: 600;
+    font-size: 0.6rem;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+  }
+  .depoimento-meta-item strong {
+    display: block;
+    font-family: var(--font-body);
+    font-weight: 700;
+    font-size: 0.8rem;
+    line-height: 1.3;
+    color: var(--color-white);
+  }
+
+  @media (max-width: 480px) {
+    .depoimento-top { flex-direction: column; padding: 0; }
+    .depoimento-avatar { flex: none; width: 100%; aspect-ratio: 1 / 1; border-radius: 0; }
+    .depoimento-content { padding: 16px 20px; }
+  }
+
+  .depoimentos-videos {
+    max-width: 1200px;
+    margin: var(--space-lg) auto 0;
+  }
+  .depoimentos-videos-header {
+    text-align: center;
+    max-width: 640px;
+    margin: 0 auto var(--space-lg);
+  }
+  .depoimentos-videos-eyebrow {
+    display: block;
+    color: var(--color-green);
+    margin-bottom: 16px;
+  }
+  .depoimentos-videos-headline {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  .depoimentos-videos-line {
+    font-family: var(--font-display);
+    font-weight: 900;
+    font-size: clamp(1.7rem, 3.6vw, 2.6rem);
+    line-height: 1.15;
+    color: var(--text-strong);
+  }
+  .depoimentos-videos-line-accent { color: var(--color-green); }
+  .depoimentos-videos-subtext {
+    font-family: var(--font-body);
+    font-size: 1.05rem;
+    color: var(--text-muted);
+    margin-top: 16px;
+  }
+
+  .video-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 32px;
+  }
+  .video-card { display: flex; flex-direction: column; }
+  .video-thumb {
+    position: relative;
+    display: block;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    border-radius: 16px;
+    overflow: hidden;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    background: var(--color-bg-neutral);
+  }
+  .video-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 300ms var(--ease-base);
+  }
+  .video-thumb:hover img { transform: scale(1.04); }
+  .video-play {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: var(--color-green);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-deep);
+    transition: transform 200ms var(--ease-base);
+  }
+  .video-thumb:hover .video-play { transform: translate(-50%, -50%) scale(1.08); }
+
+  .video-embed {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    border-radius: 16px;
+    overflow: hidden;
+  }
+  .video-embed iframe { width: 100%; height: 100%; border: 0; display: block; }
+  .video-card-body { margin-top: 20px; }
+  .video-quote {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-style: italic;
+    font-size: 1.15rem;
+    color: var(--text-strong);
+    line-height: 1.35;
+    margin-bottom: 10px;
+  }
+  .video-card-body p {
+    font-family: var(--font-body);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: var(--text-muted);
+    margin-bottom: 6px;
+  }
+  .video-card-body p strong { color: var(--text-strong); }
+  .video-conclusion {
+    font-family: var(--font-display);
+    font-weight: 900;
+    font-style: italic;
+    text-transform: uppercase;
+    font-size: 1rem;
+    color: var(--color-green);
+    margin-top: 6px;
+  }
+  .video-author {
+    margin-top: 10px;
+    font-family: var(--font-ui);
+    font-weight: 600;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+  }
+  .video-author strong { color: var(--text-strong); }
+
+  .depoimentos-stat {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 680px;
+    margin: var(--space-lg) auto 0;
+    background: var(--color-white);
+    border-radius: var(--radius-pill);
+    box-shadow: var(--shadow-soft);
+    padding: 20px 40px;
+  }
+  .depoimentos-stat-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex: 1;
+    justify-content: center;
+  }
+  .depoimentos-stat svg { color: var(--color-green); flex-shrink: 0; }
+  .depoimentos-stat strong {
+    display: block;
+    font-family: var(--font-display);
+    font-weight: 900;
+    font-size: 1rem;
+    text-transform: uppercase;
+    line-height: 1.3;
+    color: var(--text-strong);
+  }
+  .depoimentos-stat-divider {
+    width: 1px;
+    height: 38px;
+    background: var(--color-border);
+    margin: 0 28px;
+    flex-shrink: 0;
+  }
+
+  @media (max-width: 680px) {
+    .depoimentos-stat { flex-direction: column; gap: 16px; padding: 24px; }
+    .depoimentos-stat-divider { width: 60%; height: 1px; margin: 0; }
+  }
+
+  .depoimentos-quote {
+    max-width: 1200px;
+    margin: var(--space-lg) auto 0;
+    background: var(--color-deep);
+    border-radius: var(--radius-card);
+    padding: 36px 40px;
+    display: flex;
+    align-items: center;
+    gap: 28px;
+    flex-wrap: wrap;
+  }
+  .depoimentos-quote-icon {
+    flex-shrink: 0;
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    background: rgba(145, 200, 75, 0.15);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-green);
+  }
+  .depoimentos-quote-text { flex: 1 1 380px; }
+  .depoimentos-quote-text p {
+    font-family: var(--font-body);
+    font-size: 1.05rem;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.85);
+    margin: 0;
+  }
+  .depoimentos-quote-text p strong { color: var(--color-green); }
+  .depoimentos-quote-author {
+    display: block;
+    margin-top: 10px;
+    font-family: var(--font-ui);
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.55);
+  }
+  .depoimentos-quote-divider {
+    width: 1px;
+    align-self: stretch;
+    background: rgba(255, 255, 255, 0.15);
+  }
+
+  @media (max-width: 680px) {
+    .depoimentos-quote-divider { display: none; }
+    .depoimentos-quote { padding: 28px; }
+  }
+
+  /* ===== BLOCO 9: PLANOS ===== */
+  .planos {
+    background: var(--color-white);
+    padding: var(--space-2xl) 24px;
+  }
+  @media (max-width: 680px) {
+    .planos { padding: 56px 24px; }
+  }
+  .planos-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  .planos-header {
+    text-align: center;
+    max-width: 680px;
+    margin: 0 auto var(--space-lg);
+  }
+  .planos-eyebrow {
+    display: block;
+    color: var(--color-blue);
+    margin-bottom: 16px;
+  }
+  .planos-headline {
+    font-family: var(--font-display);
+    font-weight: 900;
+    font-size: clamp(2rem, 4.5vw, 3rem);
+    color: var(--text-strong);
+    margin-bottom: 16px;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+  }
+  .planos-subtext {
+    font-family: var(--font-body);
+    font-size: 1rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+  }
+
+  .planos-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    align-items: start;
+  }
+
+  .plano-card {
+    background: var(--color-white);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-card);
+    padding: 32px 28px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    transition: transform 200ms var(--ease-base), box-shadow 200ms var(--ease-base);
+  }
+  .plano-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-elevated);
+  }
+
+  .plano-card--destaque {
+    background: var(--color-deep);
+    border-color: var(--color-deep);
+    box-shadow: var(--shadow-elevated);
+  }
+  .plano-card--destaque:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 24px 56px rgba(5, 55, 160, 0.22);
+  }
+
+  .plano-badge {
+    display: inline-flex;
+    align-self: flex-start;
+    font-family: var(--font-ui);
+    font-weight: 600;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    padding: 5px 14px;
+    border-radius: var(--radius-pill);
+    background: var(--color-green);
+    color: var(--text-strong);
+    margin-bottom: 20px;
+  }
+
+  .plano-fase {
+    display: inline-block;
+    font-family: var(--font-ui);
+    font-weight: 600;
+    font-size: 0.82rem;
+    color: var(--color-blue);
+    margin-bottom: 8px;
+  }
+  .plano-card--destaque .plano-fase {
+    color: var(--color-green);
+  }
+
+  .plano-nome {
+    font-family: var(--font-display);
+    font-weight: 900;
+    font-size: 1.4rem;
+    letter-spacing: -0.01em;
+    color: var(--text-strong);
+    margin-bottom: 10px;
+  }
+  .plano-card--destaque .plano-nome {
+    color: var(--color-white);
+  }
+
+  .plano-desc {
+    font-family: var(--font-body);
+    font-size: 0.95rem;
+    line-height: 1.55;
+    color: var(--text-muted);
+    margin-bottom: 24px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid var(--color-border);
+  }
+  .plano-card--destaque .plano-desc {
+    color: rgba(255, 255, 255, 0.68);
+    border-bottom-color: rgba(255, 255, 255, 0.14);
+  }
+
+  .plano-preco {
+    margin-bottom: 24px;
+  }
+  .plano-preco-principal {
+    display: flex;
+    align-items: baseline;
+    gap: 6px;
+    margin-bottom: 5px;
+  }
+  .plano-valor {
+    font-family: var(--font-display);
+    font-weight: 900;
+    font-size: 2.2rem;
+    color: var(--color-blue);
+    line-height: 1;
+    letter-spacing: -0.02em;
+  }
+  .plano-card--destaque .plano-valor {
+    color: var(--color-green);
+  }
+  .plano-periodo {
+    font-family: var(--font-body);
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    line-height: 1.4;
+  }
+  .plano-card--destaque .plano-periodo {
+    color: rgba(255, 255, 255, 0.55);
+  }
+  .plano-mensal {
+    display: block;
+    font-family: var(--font-body);
+    font-size: 0.85rem;
+    color: var(--text-muted);
+  }
+  .plano-card--destaque .plano-mensal {
+    color: rgba(255, 255, 255, 0.45);
+  }
+
+  .plano-features {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 13px;
+    margin-bottom: 32px;
+    flex: 1;
+  }
+  .plano-features li {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    font-family: var(--font-body);
+    font-size: 0.95rem;
+    color: var(--text-strong);
+    line-height: 1.4;
+  }
+  .plano-card--destaque .plano-features li {
+    color: rgba(255, 255, 255, 0.85);
+  }
+  .plano-check {
+    flex-shrink: 0;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: rgba(145, 200, 75, 0.16);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1px;
+    color: var(--color-green);
+  }
+
+  .plano-cta {
+    display: block;
+    text-align: center;
+    width: 100%;
+  }
+
+  @media (max-width: 1080px) {
+    .planos-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 560px) {
+    .planos-grid { grid-template-columns: 1fr; }
+  }
+
+  /* ===== BLOCO RAIOX CTA ===== */
+  .raiox {
+    background: var(--color-white);
+    padding: 0 24px var(--space-2xl);
+  }
+  @media (max-width: 680px) {
+    .raiox { padding: 0 24px 48px; }
+  }
+  .raiox-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    background: var(--color-deep);
+    border-radius: var(--radius-card);
+    padding: 40px 48px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    flex-wrap: wrap;
+  }
+  .raiox-body {
+    flex: 1 1 420px;
+  }
+  .raiox-eyebrow {
+    display: inline-flex;
+    font-family: var(--font-ui);
+    font-weight: 600;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--text-strong);
+    background: var(--color-green);
+    padding: 5px 16px;
+    border-radius: var(--radius-pill);
+    margin-bottom: 18px;
+  }
+  .raiox-headline {
+    font-family: var(--font-display);
+    font-weight: 900;
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+    color: var(--color-white);
+    margin-bottom: 14px;
+  }
+  .raiox-text {
+    font-family: var(--font-body);
+    font-size: 0.98rem;
+    line-height: 1.65;
+    color: rgba(255, 255, 255, 0.72);
+    margin: 0;
+  }
+  .raiox-text strong {
+    color: var(--color-white);
+  }
+  .raiox-cta-wrap {
+    flex-shrink: 0;
+  }
+  .raiox-specs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 22px;
+  }
+  .raiox-spec {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: rgba(255, 255, 255, 0.09);
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    border-radius: var(--radius-pill);
+    padding: 5px 12px;
+    font-family: var(--font-ui);
+    font-weight: 600;
+    font-size: 0.73rem;
+    color: rgba(255, 255, 255, 0.82);
+    white-space: nowrap;
+  }
+  .raiox-spec svg { color: var(--color-green); flex-shrink: 0; }
+  @media (max-width: 680px) {
+    .raiox-inner { padding: 32px 24px; flex-direction: column; align-items: flex-start; justify-content: flex-start; gap: 24px; }
+    .raiox-body { flex: none; }
+    .raiox-cta-wrap { align-self: stretch; }
+    .raiox-cta-wrap .btn { width: 100%; justify-content: center; }
+  }
+
+  /* ===== BLOCO 10: FAQ / QUEBRA DE OBJEÇÕES ===== */
+  .faq {
+    background: var(--color-bg-neutral);
+    padding: var(--space-2xl) 24px;
+  }
+  .faq-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  .faq-header {
+    text-align: center;
+    max-width: 680px;
+    margin: 0 auto var(--space-lg);
+  }
+  .faq-eyebrow {
+    display: block;
+    color: var(--color-green);
+    margin-bottom: 16px;
+  }
+  .faq-headline {
+    font-size: clamp(1.9rem, 4vw, 2.7rem);
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+    margin-bottom: 18px;
+  }
+  .faq-headline-line { display: block; color: var(--text-strong); }
+  .faq-headline-accent { display: block; color: var(--color-green); }
+  .faq-subtext {
+    font-family: var(--font-body);
+    font-size: 1rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+  }
+
+  .faq-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+  }
+
+  .faq-card {
+    background: var(--color-white);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-card);
+    padding: 24px;
+    display: flex;
+    flex-direction: row;
+    gap: 18px;
+    align-items: flex-start;
+    transition: transform 200ms var(--ease-base), box-shadow 200ms var(--ease-base);
+  }
+  .faq-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-elevated);
+  }
+
+  .faq-icon-wrap {
+    flex-shrink: 0;
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    background: rgba(145, 200, 75, 0.14);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-green);
+  }
+
+  .faq-card-body { flex: 1; min-width: 0; }
+
+  .faq-card-body h3 {
+    font-family: var(--font-display);
+    font-weight: 900;
+    font-size: 1rem;
+    letter-spacing: -0.01em;
+    line-height: 1.25;
+    color: var(--text-strong);
+    margin-bottom: 8px;
+  }
+
+  .faq-title-line {
+    width: 28px;
+    height: 2px;
+    background: var(--color-green);
+    border-radius: 2px;
+    margin-bottom: 12px;
+  }
+
+  .faq-card-body p {
+    font-family: var(--font-body);
+    font-size: 0.9rem;
+    line-height: 1.65;
+    color: var(--text-muted);
+    margin: 0;
+  }
+
+  .faq-conclusion-box {
+    background: var(--color-deep);
+    border-radius: var(--radius-card);
+    position: relative;
+    overflow: hidden;
+    margin-top: 24px;
+    padding: 48px 48px;
+    display: flex;
+    align-items: center;
+    min-height: 300px;
+  }
+
+  .faq-conclusion-box::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: var(--color-green);
+  }
+
+  .faq-conclusion-content {
+    flex: 1;
+    position: relative;
+    z-index: 1;
+    max-width: 500px;
+  }
+
+  .faq-conclusion-eyebrow {
+    font-family: var(--font-ui);
+    font-weight: 600;
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--color-green);
+    margin-bottom: 12px;
+    display: block;
+  }
+
+  .faq-conclusion-box h3 {
+    font-family: var(--font-display);
+    font-weight: 900;
+    font-size: clamp(1.5rem, 2.6vw, 2rem);
+    color: var(--color-white);
+    letter-spacing: -0.02em;
+    line-height: 1.15;
+    margin-bottom: 14px;
+  }
+
+  .faq-conclusion-box h3 span { color: var(--color-green); }
+
+  .faq-conclusion-box p {
+    font-family: var(--font-body);
+    font-size: 0.98rem;
+    line-height: 1.65;
+    color: rgba(255, 255, 255, 0.72);
+    margin: 0 0 24px;
+  }
+
+  .faq-trust-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 14px;
+  }
+
+  .faq-trust-badge {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    font-family: var(--font-ui);
+    font-weight: 600;
+    font-size: 0.82rem;
+    color: rgba(255, 255, 255, 0.72);
+  }
+
+  .faq-trust-badge svg { color: var(--color-green); flex-shrink: 0; }
+
+  .faq-conclusion-photo {
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 45%;
+  }
+
+  .faq-conclusion-photo::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    background: linear-gradient(to right, var(--color-deep) 0%, rgba(3, 22, 59, 0.3) 55%, rgba(3, 22, 59, 0) 100%);
+  }
+
+  .faq-conclusion-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center center;
+    display: block;
+  }
+
+  @media (max-width: 900px) {
+    .faq-grid { grid-template-columns: repeat(2, 1fr); }
+    .faq-conclusion-photo { width: 36%; }
+  }
+  @media (max-width: 680px) {
+    .faq-conclusion-box {
+      padding: 36px 28px 0;
+      flex-direction: column;
+      min-height: auto;
+    }
+    .faq-conclusion-content { max-width: 100%; }
+    .faq-conclusion-photo {
+      position: relative;
+      width: calc(100% + 56px);
+      margin: 24px -28px 0;
+      height: 220px;
+      flex-shrink: 0;
+    }
+    .faq-conclusion-photo::before {
+      background: linear-gradient(to bottom, var(--color-deep) 0%, rgba(3, 22, 59, 0) 45%);
+    }
+  }
+  @media (max-width: 540px) {
+    .faq-grid { grid-template-columns: 1fr; }
+    .faq-card { flex-direction: column; gap: 14px; }
+  }
+
+  /* ===== BLOCO: CTA AGENDAMENTO ===== */
+  .cta-agendamento {
+    background: var(--color-deep);
+    padding: var(--space-2xl) 24px;
+  }
+  @media (max-width: 680px) {
+    .cta-agendamento { padding: 56px 24px; }
+  }
+  .cta-agendamento-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 64px;
+    align-items: center;
+  }
+  .cta-agendamento-eyebrow {
+    display: block;
+    color: var(--color-green);
+    margin-bottom: 16px;
+  }
+  .cta-agendamento-headline {
+    font-family: var(--font-display);
+    font-weight: 900;
+    font-size: clamp(2rem, 4vw, 3rem);
+    color: var(--color-white);
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+    margin-bottom: 20px;
+  }
+  .cta-agendamento-desc {
+    font-family: var(--font-body);
+    font-size: 1rem;
+    line-height: 1.7;
+    color: rgba(255, 255, 255, 0.72);
+    margin-bottom: 28px;
+  }
+  .cta-agendamento-benefits {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    list-style: none;
+  }
+  .cta-agendamento-benefits li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-family: var(--font-body);
+    font-size: 0.98rem;
+    color: rgba(255, 255, 255, 0.82);
+  }
+  .cta-agendamento-benefits li svg { color: var(--color-green); flex-shrink: 0; }
+
+  .cta-form-card {
+    background: var(--color-white);
+    border-radius: var(--radius-card);
+    padding: 36px 32px;
+    box-shadow: 0 24px 64px rgba(0, 0, 0, 0.32);
+  }
+  .cta-form-card-title {
+    font-family: var(--font-display);
+    font-weight: 900;
+    font-size: 1.25rem;
+    color: var(--text-strong);
+    letter-spacing: -0.01em;
+    margin-bottom: 24px;
+  }
+  .form-group { margin-bottom: 16px; }
+  .form-label {
+    display: block;
+    font-family: var(--font-ui);
+    font-weight: 600;
+    font-size: 0.85rem;
+    color: var(--text-strong);
+    margin-bottom: 6px;
+  }
+  .form-input,
+  .form-select {
+    width: 100%;
+    padding: 13px 16px;
+    border: 1.5px solid var(--color-border);
+    border-radius: 12px;
+    font-family: var(--font-body);
+    font-size: 0.95rem;
+    color: var(--text-strong);
+    background: var(--color-white);
+    outline: none;
+    transition: border-color 200ms;
+    appearance: none;
+    -webkit-appearance: none;
+  }
+  .form-input:focus,
+  .form-select:focus { border-color: var(--color-blue); box-shadow: 0 0 0 3px rgba(5, 55, 160, 0.08); }
+  .form-input::placeholder { color: var(--text-muted); }
+  .form-select-wrap { position: relative; }
+  .form-select-wrap::after {
+    content: '';
+    position: absolute;
+    right: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    border: 5px solid transparent;
+    border-top-color: var(--text-muted);
+    pointer-events: none;
+  }
+  .form-consent {
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+    margin-bottom: 20px;
+  }
+  .form-consent input[type="checkbox"] {
+    flex-shrink: 0;
+    width: 16px;
+    height: 16px;
+    margin-top: 2px;
+    accent-color: var(--color-blue);
+    cursor: pointer;
+  }
+  .form-consent-text {
+    font-family: var(--font-body);
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    line-height: 1.5;
+  }
+  .form-consent-text a { color: var(--color-blue); text-decoration: underline; }
+  .form-submit { width: 100%; padding: 16px; font-size: 1rem; }
+  .form-hint {
+    text-align: center;
+    font-family: var(--font-body);
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    margin-top: 12px;
+  }
+
+  @media (max-width: 880px) {
+    .cta-agendamento-inner { grid-template-columns: 1fr; gap: 40px; }
+  }
+
+  /* ===== QUOTE STRIP ===== */
+  .quote-strip {
+    background: #010D20;
+    padding: 72px 24px;
+    text-align: center;
+  }
+  .quote-strip-text {
+    font-family: var(--font-display);
+    font-weight: 900;
+    font-style: italic;
+    font-size: clamp(1.8rem, 4.5vw, 3rem);
+    line-height: 1.3;
+    letter-spacing: -0.02em;
+  }
+  .quote-strip-line { display: block; color: var(--color-white); }
+  .quote-strip-accent { display: block; color: var(--color-green); }
+
+  /* ===== FOOTER ===== */
+  .site-footer {
+    background: var(--color-deep);
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 64px 24px 0;
+  }
+  .footer-inner { max-width: 1200px; margin: 0 auto; }
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 1.6fr 1fr 1fr;
+    gap: 48px;
+    padding-bottom: 48px;
+  }
+  .footer-logo { margin-bottom: 18px; }
+  .footer-logo img { height: 44px; width: auto; }
+  .footer-desc {
+    font-family: var(--font-body);
+    font-size: 0.9rem;
+    line-height: 1.7;
+    color: rgba(255, 255, 255, 0.5);
+  }
+  .footer-col-title {
+    font-family: var(--font-ui);
+    font-weight: 600;
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--color-green);
+    margin-bottom: 18px;
+  }
+  .footer-address {
+    font-family: var(--font-body);
+    font-size: 0.9rem;
+    line-height: 1.85;
+    color: rgba(255, 255, 255, 0.6);
+    font-style: normal;
+  }
+  .footer-address-divider {
+    display: block;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.1);
+    margin: 12px 0;
+  }
+  .footer-contacts { display: flex; flex-direction: column; gap: 14px; }
+  .footer-contact-link {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-family: var(--font-body);
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    transition: color 200ms;
+  }
+  .footer-contact-link:hover { color: var(--color-green); }
+  .footer-contact-link svg { color: var(--color-green); flex-shrink: 0; }
+
+  .footer-bar {
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 20px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+  .footer-bar-copy,
+  .footer-bar-tagline {
+    font-family: var(--font-body);
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.35);
+  }
+  .footer-bar-tagline { font-style: italic; }
+
+  @media (max-width: 780px) {
+    .footer-grid { grid-template-columns: 1fr 1fr; }
+    .footer-col-brand { grid-column: 1 / -1; }
+  }
+  @media (max-width: 480px) {
+    .footer-grid { grid-template-columns: 1fr; }
+    .footer-bar { flex-direction: column; text-align: center; }
+  }
+
+  /* ===== BLOCO: PERGUNTAS FREQUENTES ===== */
+  .perguntas {
+    background: var(--color-white);
+    padding: var(--space-2xl) 24px;
+    border-top: 1px solid var(--color-border);
+  }
+  .perguntas-inner {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  .perguntas-header {
+    text-align: center;
+    margin-bottom: var(--space-lg);
+  }
+  .perguntas-eyebrow {
+    display: block;
+    color: var(--color-blue);
+    margin-bottom: 16px;
+  }
+  .perguntas-headline {
+    font-family: var(--font-display);
+    font-weight: 900;
+    font-size: clamp(1.9rem, 4vw, 2.7rem);
+    color: var(--text-strong);
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+  }
+
+  .perguntas-accordion { border-top: 1px solid var(--color-border); }
+
+  .pq-item { border-bottom: 1px solid var(--color-border); }
+
+  .pq-trigger {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 24px 0;
+    background: none;
+    border: none;
+    cursor: pointer;
+    text-align: left;
+  }
+
+  .pq-trigger-text {
+    font-family: var(--font-display);
+    font-weight: 900;
+    font-size: 1.05rem;
+    color: var(--text-strong);
+    letter-spacing: -0.01em;
+    line-height: 1.3;
+    transition: color 200ms;
+  }
+  .pq-trigger:hover .pq-trigger-text,
+  .pq-item.active .pq-trigger-text { color: var(--color-blue); }
+
+  .pq-icon {
+    flex-shrink: 0;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: var(--color-bg-neutral);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-blue);
+    transition: background 200ms, transform 300ms var(--ease-base);
+  }
+  .pq-item.active .pq-icon {
+    background: var(--color-blue);
+    color: var(--color-white);
+    transform: rotate(45deg);
+  }
+
+  .pq-body {
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 420ms var(--ease-base);
+  }
+  .pq-body-inner { padding: 0 0 28px; }
+
+  .pq-lead {
+    display: block;
+    font-family: var(--font-display);
+    font-weight: 900;
+    font-size: 1.1rem;
+    color: var(--color-green);
+    margin-bottom: 10px;
+  }
+  .pq-body-inner p {
+    font-family: var(--font-body);
+    font-size: 1rem;
+    line-height: 1.7;
+    color: var(--text-muted);
+    margin-bottom: 12px;
+  }
+  .pq-body-inner p:last-child { margin-bottom: 0; }
+  .pq-body-inner strong { color: var(--text-strong); font-weight: 700; }
+</style>
+</head>
+<body>
+
+<header class="site-header" id="siteHeader">
+  <div class="header-inner">
+    <a href="#" class="header-logo">
+      <img src="assets/larun-horizontal-color.png" alt="LARUN" height="100">
+    </a>
+    <div class="header-right">
+      <nav class="header-nav" aria-label="Navegação principal">
+        <a href="#metodo">Método</a>
+        <a href="#fases">Fases</a>
+        <a href="#estudio">O Estúdio</a>
+        <a href="#planos">Planos</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+      <a href="#raiox" class="btn btn-pill btn-green header-cta">Agendar RaioX</a>
+    </div>
+    <button class="header-burger" id="headerBurger" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobileDrawer">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<div class="drawer-overlay" id="drawerOverlay"></div>
+<aside class="mobile-drawer" id="mobileDrawer" aria-hidden="true">
+  <button class="drawer-close" id="drawerClose" aria-label="Fechar menu">&times;</button>
+  <nav class="drawer-nav" aria-label="Navegação mobile">
+    <a href="#metodo">Método</a>
+    <a href="#fases">Fases</a>
+    <a href="#estudio">O Estúdio</a>
+    <a href="#planos">Planos</a>
+    <a href="#faq">FAQ</a>
+  </nav>
+  <a href="#raiox" class="btn btn-pill btn-green drawer-cta">Agendar RaioX</a>
+</aside>
+
+<section class="hero" id="hero">
+  <div class="hero-photo-bg"></div>
+  <div class="hero-inner">
+    <div class="hero-content">
+      <p class="eyebrow hero-eyebrow"><span class="eyebrow-dot"></span>Preparação física para corredores</p>
+      <h1 class="hero-headline" id="heroHeadline">
+        <span class="hero-line" style="--delay:0ms">Você treina.</span>
+        <span class="hero-line" style="--delay:120ms">O corpo não acompanha.</span>
+        <span class="hero-line hero-line-accent" style="--delay:240ms">E você ainda não sabe o porquê.</span>
+      </h1>
+
+      <div class="hero-identity-cards">
+        <div class="hero-identity-card">
+          <h3>5K · 10K</h3>
+          <p>Toda vez que você tenta ir além, o corpo diz que não.</p>
+        </div>
+        <div class="hero-identity-card">
+          <h3>Meia Maratona</h3>
+          <p>Meses treinando. Pace igual. O problema não é esforço.</p>
+        </div>
+        <div class="hero-identity-card">
+          <h3>Maratona</h3>
+          <p>Cada ciclo cobra mais. O corpo que te trouxe até aqui não é o mesmo.</p>
+        </div>
+      </div>
+
+      <div class="hero-ctas">
+        <a href="#raiox" class="btn btn-pill btn-blue" data-cta-position="hero">Agendar meu RaioX</a>
+        <a href="https://wa.me/5519971439283" target="_blank" rel="noopener" class="btn btn-pill btn-outline-blue whatsapp-cta" data-cta-position="hero-whatsapp">Falar no WhatsApp</a>
+      </div>
+
+      <p class="hero-trust">RaioX LARUN é gratuito · ~7 minutos · online · sem compromisso de matrícula</p>
+    </div>
+
+    <div class="hero-photo-mobile">
+      <img src="assets/hero-leandro-mobile.png" alt="Leandro, fundador da LARUN, correndo" width="728" height="941" fetchpriority="high" decoding="async">
+      <div class="hero-callout" style="top:12%;right:7%">
+        <span class="hero-callout-icon"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17.7 7.7a2.5 2.5 0 1 1 1.8 4.3H2"/><path d="M9.6 4.6A2 2 0 1 1 11 8H2"/><path d="M12.6 19.4A2 2 0 1 0 14 16H2"/></svg></span>
+        <span class="hero-callout-label">Leveza Corporal</span>
+      </div>
+      <div class="hero-callout" style="top:40%;left:5%">
+        <span class="hero-callout-icon"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></span>
+        <span class="hero-callout-label">Resistência Física</span>
+      </div>
+      <div class="hero-callout" style="top:64%;right:7%">
+        <span class="hero-callout-icon"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></span>
+        <span class="hero-callout-label">Técnica & Força</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Callouts desktop: posicionados sobre a foto de fundo -->
+  <div class="hero-callouts-desktop">
+    <div class="hero-callout" style="top:9%;right:14%;animation-delay:600ms">
+      <span class="hero-callout-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17.7 7.7a2.5 2.5 0 1 1 1.8 4.3H2"/><path d="M9.6 4.6A2 2 0 1 1 11 8H2"/><path d="M12.6 19.4A2 2 0 1 0 14 16H2"/></svg></span>
+      <span class="hero-callout-label">Leveza Corporal</span>
+    </div>
+    <div class="hero-callout" style="top:40%;left:54%;animation-delay:800ms">
+      <span class="hero-callout-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></span>
+      <span class="hero-callout-label">Resistência Física</span>
+    </div>
+    <div class="hero-callout" style="top:64%;right:10%;animation-delay:1000ms">
+      <span class="hero-callout-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></span>
+      <span class="hero-callout-label">Técnica & Força</span>
+    </div>
+  </div>
+</section>
+
+<section class="posicionamento" id="posicionamento">
+  <img src="assets/larun-mark.png" alt="" class="posicionamento-watermark" aria-hidden="true" loading="lazy">
+  <div class="posicionamento-inner">
+    <p class="posicionamento-eyebrow eyebrow">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 1 1 18 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+      Estúdio e Grupo de Corrida · SBC
+    </p>
+    <h2 class="posicionamento-headline">Corra Sem Quebrar.</h2>
+    <p class="posicionamento-subtext">Não é academia. Não é assessoria online. É o <strong>Método LARUN</strong>: evolução estruturada, presencial, com diagnóstico antes da prescrição e professor sempre presente.</p>
+    <div class="posicionamento-ctas">
+      <a href="#raiox" class="btn btn-pill btn-green" data-cta-position="posicionamento">
+        Agendar meu RaioX
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+      <a href="https://wa.me/5519971439283" target="_blank" rel="noopener" class="btn btn-pill btn-outline-white whatsapp-cta" data-cta-position="posicionamento-whatsapp">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0a8 8 0 0 0-6.9 12.06L0 16l4-.95A8 8 0 1 0 8 0zm4.52 11.4c-.19.53-1.12 1.02-1.54 1.06-.4.04-.74.18-2.5-.52-2.12-.85-3.5-2.95-3.6-3.08-.1-.13-.85-1.13-.85-2.15 0-1.02.53-1.51.72-1.72.19-.21.42-.26.56-.26.14 0 .28 0 .4.01.13.01.31-.05.48.37.18.43.6 1.46.65 1.57.05.1.09.23.02.36-.07.13-.11.21-.21.33-.1.12-.21.27-.3.36-.1.1-.2.2-.09.4.12.2.55.91 1.18 1.47.81.72 1.49.94 1.7 1.04.21.1.33.09.46-.05.13-.14.5-.58.64-.78.13-.2.27-.16.45-.1.18.07 1.15.54 1.34.64.2.1.33.15.38.23.05.08.05.46-.14.99z"/></svg>
+        Falar no WhatsApp
+      </a>
+    </div>
+    <p class="posicionamento-trust">Gratuito · ~7 min · online · sem compromisso</p>
+  </div>
+
+  <div class="posicionamento-photo-strip">
+    <img src="assets/estudio-larun-preparacao-corrida-Treino-06.jpeg" alt="Aluno treinando no Estúdio LARUN" loading="lazy" decoding="async">
+  </div>
+</section>
+
+<section class="numeros" id="numeros">
+  <div class="numeros-inner">
+    <div class="numero-item" data-target="673" data-prefix="+">
+      <span class="numero-value">0</span>
+      <p class="numero-label">Corredores treinados</p>
+    </div>
+    <div class="numero-item" data-target="5">
+      <span class="numero-value">0</span>
+      <p class="numero-label">Pilares do método</p>
+    </div>
+    <div class="numero-item" data-target="3">
+      <span class="numero-value">0</span>
+      <p class="numero-label">Fases do corredor</p>
+    </div>
+    <div class="numero-item" data-target="100" data-suffix="%">
+      <span class="numero-value">0</span>
+      <p class="numero-label">Acompanhamento presencial</p>
+    </div>
+  </div>
+</section>
+
+<section class="metodo" id="metodo">
+  <div class="metodo-inner">
+    <div class="metodo-header">
+      <p class="eyebrow metodo-eyebrow">O Método LARUN</p>
+      <h2 class="metodo-headline">Cinco pilares sequenciais. Nenhum pode ser pulado.</h2>
+    </div>
+    <div class="pilares-grid">
+      <article class="pilar-card">
+        <span class="pilar-numero">01</span>
+        <h3>Leveza Corporal</h3>
+        <p>Correr com menos impacto, menos tensão e mais eficiência. Mobilidade articular, ativação do core, redução de sobrecarga. O resultado prático é menos força desperdiçada e mais fluidez.</p>
+      </article>
+      <article class="pilar-card">
+        <span class="pilar-numero">02</span>
+        <h3>Aperfeiçoamento Técnico e Força</h3>
+        <p>Correção do padrão biomecânico e fortalecimento específico para corrida. Educativos de corrida, exercícios de resistência e amplitude de movimento. Sem treinos genéricos.</p>
+      </article>
+      <article class="pilar-card">
+        <span class="pilar-numero">03</span>
+        <h3>Resistência Física</h3>
+        <p>Construção de base real, respeitando o tempo do corpo. Volume e intensidade progressivos, treinos de alta intensidade, pliometria e velocidade. O objetivo é durar mais, não ir mais rápido agora.</p>
+      </article>
+      <article class="pilar-card">
+        <span class="pilar-numero">04</span>
+        <h3>Unificação Corpo e Mente</h3>
+        <p>Confiança se treina. O corredor aprende a escutar o corpo sem travar por medo. Controle emocional, resiliência, visualização e consistência com feedback contínuo.</p>
+      </article>
+      <article class="pilar-card">
+        <span class="pilar-numero">05</span>
+        <h3>Nivelamento e Preparação</h3>
+        <p>Cada corredor no seu momento. Estruturação de metas realistas, planejamento individualizado, ajustes de técnica e estratégias de recuperação. Sem comparação, sem pressa.</p>
+      </article>
+      <article class="pilar-card pilar-resultado">
+        <div class="pilar-resultado-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 4 5v6c0 5 3.5 9 8 11 4.5-2 8-6 8-11V5l-8-3Z"/><path d="m9 12 2 2 4-4"/></svg>
+        </div>
+        <h3>Corredores Blindados.</h3>
+        <p>Não é atleta de elite. É o corredor que corre com segurança, consistência e longevidade, ciclo após ciclo.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="leandro" id="leandro">
+  <div class="leandro-inner">
+    <div class="leandro-text">
+      <p class="eyebrow leandro-eyebrow">Quem criou o Método LARUN</p>
+      <h2 class="leandro-headline">
+        <span class="leandro-line">Leandro Silva.</span>
+        <span class="leandro-line">Não começou como treinador.</span>
+        <span class="leandro-line leandro-line-accent">Começou como paciente.</span>
+      </h2>
+      <p>Aos 18 anos, um diagnóstico de <strong>Condromalácia</strong> encerrou suas corridas e trilhas. Os médicos disseram que esporte de impacto estava fora de questão. Em vez de aceitar, ele decidiu entender.</p>
+      <p>Estudou Educação Física, fez pós-graduação em Reabilitação Física e passou os anos seguintes mapeando o que realmente previne lesões e sustenta evolução.</p>
+      <p>O resultado foi o <strong>Método LARUN</strong>: 5 pilares desenvolvidos ao longo de mais de 11 anos, testados com 673 corredores de todos os níveis. O método que ele teria querido ter quando foi diagnosticado.</p>
+      <div class="leandro-tags">
+        <span class="leandro-tag">Educador Físico</span>
+        <span class="leandro-tag">Pós em Reabilitação Física</span>
+        <span class="leandro-tag">+11 anos de desenvolvimento</span>
+      </div>
+    </div>
+    <div class="leandro-photo-wrap">
+      <img src="assets/leandro-treinar-corrida.png" alt="Leandro Silva treinando e correndo provas, fundador da LARUN" loading="lazy" decoding="async">
+    </div>
+  </div>
+</section>
+
+<section class="fases" id="fases">
+  <div class="fases-inner">
+    <div class="fases-header">
+      <p class="eyebrow fases-eyebrow">As Fases do Corredor</p>
+      <h2 class="fases-headline">Cada fase tem o seu próprio teto de vidro.</h2>
+    </div>
+
+    <p class="fases-tabs-hint">Selecione sua distância</p>
+    <div class="fases-tabs" role="tablist" aria-label="Fases do corredor">
+      <button type="button" class="fase-tab active" role="tab" aria-selected="true" aria-controls="fasePanel1" id="faseTab1" data-fase="1">5k / 10k</button>
+      <button type="button" class="fase-tab" role="tab" aria-selected="false" aria-controls="fasePanel2" id="faseTab2" data-fase="2">21k</button>
+      <button type="button" class="fase-tab" role="tab" aria-selected="false" aria-controls="fasePanel3" id="faseTab3" data-fase="3">42k</button>
+    </div>
+
+    <div class="fases-painel-wrap">
+      <div class="fase-panel active visible" data-fase-panel="1" role="tabpanel" id="fasePanel1" aria-labelledby="faseTab1">
+        <p class="fase-identidade">"5k ficou fácil. 10k você termina. Mas toda vez que tenta ir além, o corpo diz que não."</p>
+        <div class="fase-pontos">
+          <div class="fase-ponto fase-ponto-a">
+            <span class="fase-ponto-label">Onde você está</span>
+            <p>Termina as provas, nada quebrado. Mas corre no improviso, sem saber se constrói base ou só gasta energia. A sensação é de teto de vidro: você força, mas não passa.</p>
+          </div>
+          <div class="fase-ponto fase-ponto-b">
+            <span class="fase-ponto-label">Onde quer chegar</span>
+            <p>Ir além dos 10k com método. Sair do improviso e entrar em progressão real, com a certeza de que o corpo aguenta o próximo salto, sem recomeçar do zero por lesão.</p>
+          </div>
+        </div>
+        <div class="fase-raiox">
+          <p><strong>O papel do RaioX:</strong> Não é para ver onde você está errando. É para descobrir o que falta no seu corpo para ir onde você já decidiu que vai, sem quebrar no meio do caminho.</p>
+          <a href="#raiox" class="btn btn-pill btn-green" data-cta-position="fases-fase1">Agendar meu RaioX</a>
+        </div>
+      </div>
+
+      <div class="fase-panel" data-fase-panel="2" role="tabpanel" id="fasePanel2" aria-labelledby="faseTab2">
+        <p class="fase-identidade">"Você não é iniciante. Isso é exatamente o problema, porque você já não aceita treinar como um, mas ainda não sabe o que está travando."</p>
+        <div class="fase-pontos">
+          <div class="fase-ponto fase-ponto-a">
+            <span class="fase-ponto-label">Onde você está</span>
+            <p>Treina com frequência. Chega na meia. Mas o pace não baixa e o volume não sobe sem o corpo reagir. A frustração é silenciosa: meses de esforço que não converteram no que deveriam.</p>
+          </div>
+          <div class="fase-ponto fase-ponto-b">
+            <span class="fase-ponto-label">Onde quer chegar</span>
+            <p>O próximo nível de pace ou distância, com diagnóstico real do que está travando. Não mais volume do mesmo treino que já não funciona. Evolução com inteligência, não com insistência.</p>
+          </div>
+        </div>
+        <div class="fase-raiox">
+          <p><strong>O papel do RaioX:</strong> Não é falta de esforço. Quem chega na meia não tem déficit de dedicação. O que falta é diagnóstico real do que está impedindo o próximo nível.</p>
+          <a href="#raiox" class="btn btn-pill btn-green" data-cta-position="fases-fase2">Agendar meu RaioX</a>
+        </div>
+      </div>
+
+      <div class="fase-panel" data-fase-panel="3" role="tabpanel" id="fasePanel3" aria-labelledby="faseTab3">
+        <p class="fase-identidade">"Você cruzou a linha dos 42k. Sabe o que isso custa. E sabe que o corpo que te trouxe até aqui não é o mesmo que vai te levar à próxima."</p>
+        <div class="fase-pontos">
+          <div class="fase-ponto fase-ponto-a">
+            <span class="fase-ponto-label">Onde você está</span>
+            <p>Maratona no currículo. Identidade sólida de corredor. Mas cada ciclo de preparação exige mais. A recuperação demora mais. E a consciência de que a ambição não vai diminuir, mas o corpo pode não acompanhar.</p>
+          </div>
+          <div class="fase-ponto fase-ponto-b">
+            <span class="fase-ponto-label">Onde quer chegar</span>
+            <p>Continuar correndo maratonas por anos, sem pagar um preço crescente a cada ciclo. A próxima maratona com menos custo físico do que a última. Longevidade é a meta real.</p>
+          </div>
+        </div>
+        <div class="fase-raiox">
+          <p><strong>O papel do RaioX:</strong> Corredor não precisa ser convencido de que método importa. Precisa saber o que o corpo aguenta de verdade, e o que já está sendo exigido além do limite.</p>
+          <a href="#raiox" class="btn btn-pill btn-green" data-cta-position="fases-fase3">Agendar meu RaioX</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="estudio" id="estudio">
+  <div class="estudio-header">
+    <h2>Um lugar real, com gente de verdade te esperando.</h2>
+    <p>Horário marcado, professor sempre presente, sem superlotação.</p>
+  </div>
+
+  <div class="estudio-gallery">
+    <figure class="estudio-fig">
+      <img src="assets/estudio-recepcao.jpeg" alt="Recepção do Estúdio LARUN" loading="lazy" decoding="async">
+      <figcaption>Recepção</figcaption>
+    </figure>
+    <figure class="estudio-fig">
+      <img src="assets/estudio-pista.jpeg" alt="Pista de treino do Estúdio LARUN" loading="lazy" decoding="async">
+      <figcaption>Pista de Treino</figcaption>
+    </figure>
+    <figure class="estudio-fig">
+      <img src="assets/estudio-ampla.jpeg" alt="Área ampla de treino do Estúdio LARUN" loading="lazy" decoding="async">
+      <figcaption>Área Ampla</figcaption>
+    </figure>
+    <figure class="estudio-fig">
+      <img src="assets/estudio-funcional.jpeg" alt="Espaço de treino funcional do Estúdio LARUN" loading="lazy" decoding="async">
+      <figcaption>Treino Funcional</figcaption>
+    </figure>
+    <figure class="estudio-fig">
+      <img src="assets/estudio-forca.jpeg" alt="Área de treino de força do Estúdio LARUN" loading="lazy" decoding="async">
+      <figcaption>Treino de Força</figcaption>
+    </figure>
+    <figure class="estudio-fig">
+      <img src="assets/estudio-esteiras.jpeg" alt="Esteiras do Estúdio LARUN" loading="lazy" decoding="async">
+      <figcaption>Esteiras</figcaption>
+    </figure>
+    <figure class="estudio-fig">
+      <img src="assets/estudio-loja.jpeg" alt="Loja do Estúdio LARUN" loading="lazy" decoding="async">
+      <figcaption>Loja LARUN</figcaption>
+    </figure>
+    <figure class="estudio-fig">
+      <img src="uploads/estudio-larun-preparacao-corrida-ambiente-01.jpeg" alt="Equipe LARUN na recepção do estúdio" loading="lazy" decoding="async">
+      <figcaption>Nossa Equipe</figcaption>
+    </figure>
+    <figure class="estudio-fig">
+      <img src="uploads/estudio-larun-preparacao-corrida-ambiente-03.jpeg" alt="Ambiente de treino do Estúdio LARUN" loading="lazy" decoding="async">
+      <figcaption>Ambiente</figcaption>
+    </figure>
+    <figure class="estudio-fig">
+      <img src="uploads/estudio-larun-preparacao-corrida-ambiente-04.jpeg" alt="Treino funcional na área externa do Estúdio LARUN" loading="lazy" decoding="async">
+      <figcaption>Área Externa</figcaption>
+    </figure>
+    <figure class="estudio-fig">
+      <img src="uploads/estudio-larun-preparacao-corrida-ambiente-05.jpeg" alt="Ambiente de treino do Estúdio LARUN" loading="lazy" decoding="async">
+      <figcaption>Estrutura Completa</figcaption>
+    </figure>
+    <figure class="estudio-fig">
+      <img src="uploads/estudio-larun-preparacao-corrida-ambiente-06.jpeg" alt="Ambiente de treino do Estúdio LARUN" loading="lazy" decoding="async">
+      <figcaption>Espaço de Treino</figcaption>
+    </figure>
+    <figure class="estudio-fig">
+      <img src="uploads/estudio-larun-preparacao-corrida-ambiente-07.jpeg" alt="Esteiras e equipamentos do Estúdio LARUN" loading="lazy" decoding="async">
+      <figcaption>Equipamentos</figcaption>
+    </figure>
+    <figure class="estudio-fig">
+      <img src="uploads/estudio-larun-preparacao-corrida-ambiente-08.jpeg" alt="Ambiente de treino do Estúdio LARUN" loading="lazy" decoding="async">
+      <figcaption>Experiência LARUN</figcaption>
+    </figure>
+  </div>
+
+  <div class="estudio-dots" id="estudioDots" aria-hidden="true"></div>
+</section>
+
+<section class="depoimentos" id="depoimentos">
+  <div class="depoimentos-header">
+    <p class="eyebrow depoimentos-eyebrow">Prova social</p>
+    <h2 class="depoimentos-headline">
+      <span class="depoimentos-line">Não importa o seu momento.</span>
+      <span class="depoimentos-line depoimentos-line-accent">Importa o próximo passo.</span>
+    </h2>
+    <p class="depoimentos-subtext">Dos primeiros quilômetros à maratona, centenas de corredores já evoluíram com o Método LARUN.</p>
+  </div>
+
+  <div class="depoimentos-grid">
+    <article class="depoimento-card">
+      <div class="depoimento-top">
+        <div class="depoimento-avatar">
+          <img src="assets/depoimento-01.png" alt="Aluna LARUN sorrindo com medalha após prova de 5K" loading="lazy" decoding="async">
+          <span class="depoimento-name">Mariana Silva</span>
+        </div>
+        <div class="depoimento-content">
+          <span class="depoimento-badge">Primeiros passos</span>
+          <h3>Ainda alternando entre correr e caminhar</h3>
+          <p class="depoimento-desc">Hoje já corre distâncias que antes pareciam impossíveis.</p>
+        </div>
+      </div>
+      <div class="depoimento-meta">
+        <div class="depoimento-meta-item">
+          <span class="depoimento-meta-label"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="7"/><path d="M8.21 13.89 7 23l5-3 5 3-1.21-9.12"/></svg><span>Objetivo</span></span>
+          <strong>5 km sem interrupções</strong>
+        </div>
+        <div class="depoimento-meta-divider" aria-hidden="true"></div>
+        <div class="depoimento-meta-item">
+          <span class="depoimento-meta-label"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg><span>Aluno Larun desde</span></span>
+          <strong>Jan/2024</strong>
+        </div>
+      </div>
+    </article>
+
+    <article class="depoimento-card">
+      <div class="depoimento-top">
+        <div class="depoimento-avatar">
+          <img src="assets/depoimento-02.png" alt="Aluno LARUN com medalha após concluir prova de 5K" loading="lazy" decoding="async">
+          <span class="depoimento-name">Eduardo Santos</span>
+        </div>
+        <div class="depoimento-content">
+          <span class="depoimento-badge">5 km</span>
+          <h3>Os primeiros 5 km sem parar</h3>
+          <p class="depoimento-desc">Descobriu que era capaz de ir muito além do que imaginava.</p>
+        </div>
+      </div>
+      <div class="depoimento-meta">
+        <div class="depoimento-meta-item">
+          <span class="depoimento-meta-label"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="7"/><path d="M8.21 13.89 7 23l5-3 5 3-1.21-9.12"/></svg><span>Conquista</span></span>
+          <strong>5 km concluídos sem parar</strong>
+        </div>
+        <div class="depoimento-meta-divider" aria-hidden="true"></div>
+        <div class="depoimento-meta-item">
+          <span class="depoimento-meta-label"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg><span>Aluno Larun desde</span></span>
+          <strong>Mar/2024</strong>
+        </div>
+      </div>
+    </article>
+
+    <article class="depoimento-card">
+      <div class="depoimento-top">
+        <div class="depoimento-avatar">
+          <img src="assets/depoimento-03.png" alt="Aluno LARUN correndo prova de 10K" loading="lazy" decoding="async">
+          <span class="depoimento-name">Danilo Ferreira</span>
+        </div>
+        <div class="depoimento-content">
+          <span class="depoimento-badge">10 km</span>
+          <h3>Queria correr melhor, não apenas mais</h3>
+          <p class="depoimento-desc">Evoluiu ritmo, técnica e confiança.</p>
+        </div>
+      </div>
+      <div class="depoimento-meta">
+        <div class="depoimento-meta-item">
+          <span class="depoimento-meta-label"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="7"/><path d="M8.21 13.89 7 23l5-3 5 3-1.21-9.12"/></svg><span>Conquista</span></span>
+          <strong>10 km em ritmo superado</strong>
+        </div>
+        <div class="depoimento-meta-divider" aria-hidden="true"></div>
+        <div class="depoimento-meta-item">
+          <span class="depoimento-meta-label"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg><span>Aluno Larun desde</span></span>
+          <strong>Mai/2024</strong>
+        </div>
+      </div>
+    </article>
+
+    <article class="depoimento-card">
+      <div class="depoimento-top">
+        <div class="depoimento-avatar">
+          <img src="assets/depoimento-04.png" alt="Aluno LARUN correndo meia maratona de 21K em Curitiba" loading="lazy" decoding="async">
+          <span class="depoimento-name">Rafael Souza</span>
+        </div>
+        <div class="depoimento-content">
+          <span class="depoimento-badge">Meia maratona</span>
+          <h3>Achava que 21 km era um sonho distante</h3>
+          <p class="depoimento-desc">Hoje cruza a linha de chegada com segurança.</p>
+        </div>
+      </div>
+      <div class="depoimento-meta">
+        <div class="depoimento-meta-item">
+          <span class="depoimento-meta-label"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="7"/><path d="M8.21 13.89 7 23l5-3 5 3-1.21-9.12"/></svg><span>Conquista</span></span>
+          <strong>Primeira meia maratona</strong>
+        </div>
+        <div class="depoimento-meta-divider" aria-hidden="true"></div>
+        <div class="depoimento-meta-item">
+          <span class="depoimento-meta-label"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg><span>Aluno Larun desde</span></span>
+          <strong>Ago/2024</strong>
+        </div>
+      </div>
+    </article>
+
+    <article class="depoimento-card">
+      <div class="depoimento-top">
+        <div class="depoimento-avatar">
+          <img src="assets/depoimento-05.png" alt="Aluna LARUN com medalha da Maratona de Porto Alegre, 42K" loading="lazy" decoding="async">
+          <span class="depoimento-name">Daniela Rocha</span>
+        </div>
+        <div class="depoimento-content">
+          <span class="depoimento-badge">42 km</span>
+          <h3>A maratona deixou de ser um sonho</h3>
+          <p class="depoimento-desc">Planejamento e constância fizeram a diferença.</p>
+        </div>
+      </div>
+      <div class="depoimento-meta">
+        <div class="depoimento-meta-item">
+          <span class="depoimento-meta-label"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="7"/><path d="M8.21 13.89 7 23l5-3 5 3-1.21-9.12"/></svg><span>Conquista</span></span>
+          <strong>Maratona concluída</strong>
+        </div>
+        <div class="depoimento-meta-divider" aria-hidden="true"></div>
+        <div class="depoimento-meta-item">
+          <span class="depoimento-meta-label"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg><span>Aluno Larun desde</span></span>
+          <strong>Nov/2024</strong>
+        </div>
+      </div>
+    </article>
+
+    <article class="depoimento-card">
+      <div class="depoimento-top">
+        <div class="depoimento-avatar">
+          <img src="assets/depoimento-06.png" alt="Aluno LARUN correndo meia maratona internacional de Belo Horizonte" loading="lazy" decoding="async">
+          <span class="depoimento-name">Rafael Lima</span>
+        </div>
+        <div class="depoimento-content">
+          <span class="depoimento-badge">Performance</span>
+          <h3>Agora o desafio é superar a si mesmo</h3>
+          <p class="depoimento-desc">Quem busca evolução contínua também encontra espaço na LARUN.</p>
+        </div>
+      </div>
+      <div class="depoimento-meta">
+        <div class="depoimento-meta-item">
+          <span class="depoimento-meta-label"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="7"/><path d="M8.21 13.89 7 23l5-3 5 3-1.21-9.12"/></svg><span>Conquista</span></span>
+          <strong>Recorde pessoal evoluído</strong>
+        </div>
+        <div class="depoimento-meta-divider" aria-hidden="true"></div>
+        <div class="depoimento-meta-item">
+          <span class="depoimento-meta-label"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg><span>Aluno Larun desde</span></span>
+          <strong>Jan/2023</strong>
+        </div>
+      </div>
+    </article>
+  </div>
+
+  <div class="depoimentos-videos">
+    <div class="depoimentos-videos-header">
+      <p class="eyebrow depoimentos-videos-eyebrow">Resultados no dia a dia</p>
+      <h3 class="depoimentos-videos-headline">
+        <span class="depoimentos-videos-line">Feedbacks que</span>
+        <span class="depoimentos-videos-line depoimentos-videos-line-accent">Inspiram e motivam.</span>
+      </h3>
+      <p class="depoimentos-videos-subtext">Histórias reais de corredores que transformaram seus treinos e alcançaram muito mais com o Método LARUN.</p>
+    </div>
+
+    <div class="video-grid">
+      <article class="video-card" data-yt-id="6IejYY5hD7s">
+        <button class="video-thumb" type="button" aria-label="Assistir depoimento em vídeo de Claudia Sakamoto">
+          <img src="https://img.youtube.com/vi/6IejYY5hD7s/hqdefault.jpg" alt="" loading="lazy" decoding="async">
+          <span class="video-play" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7-11-7Z"/></svg>
+          </span>
+        </button>
+        <div class="video-card-body">
+          <p class="video-quote">"Nunca pensei que seria maratonista."</p>
+          <p>Ela não queria correr mais. <strong>Queria correr melhor.</strong></p>
+          <p>Sem dor. Sem medo. Sem travar.</p>
+          <p class="video-conclusion">E conseguiu.</p>
+        </div>
+        <p class="video-author">Claudia Sakamoto</p>
+      </article>
+
+      <article class="video-card" data-yt-id="drUvNmpimPc">
+        <button class="video-thumb" type="button" aria-label="Assistir depoimento em vídeo de aluno LARUN">
+          <img src="https://img.youtube.com/vi/drUvNmpimPc/hqdefault.jpg" alt="" loading="lazy" decoding="async">
+          <span class="video-play" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7-11-7Z"/></svg>
+          </span>
+        </button>
+        <div class="video-card-body">
+          <p class="video-quote">"Eu achava que precisava treinar mais."</p>
+          <p>Ele não precisava treinar mais. <strong>Precisava treinar melhor.</strong></p>
+          <p>Sem exagero. Sem desgaste. Sem repetir erro.</p>
+          <p class="video-conclusion">E conseguiu.</p>
+        </div>
+        <p class="video-author">Aluno <strong>LARUN</strong></p>
+      </article>
+    </div>
+  </div>
+
+  <div class="depoimentos-stat">
+    <div class="depoimentos-stat-item">
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+      <strong>+ 673 corredores treinados</strong>
+    </div>
+    <div class="depoimentos-stat-divider" aria-hidden="true"></div>
+    <div class="depoimentos-stat-item">
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 1 1 18 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+      <strong>Em São Bernardo do Campo e região</strong>
+    </div>
+  </div>
+
+  <div class="depoimentos-quote">
+    <div class="depoimentos-quote-icon" aria-hidden="true">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M9.983 3v7.391c0 5.704-3.731 9.57-8.983 10.609l-.995-2.151c2.432-.917 3.995-3.638 3.995-5.849h-4v-10h9.983zm14.017 0v7.391c0 5.704-3.748 9.57-9 10.609l-.996-2.151c2.433-.917 3.996-3.638 3.996-5.849h-4v-10h10z"/></svg>
+    </div>
+    <div class="depoimentos-quote-text">
+      <p>Seja qual for o seu momento na corrida, existe um próximo objetivo esperando por você. <strong>E ele pode começar com o Método LARUN.</strong></p>
+      <span class="depoimentos-quote-author">Leandro Silva, fundador do Método LARUN</span>
+    </div>
+    <div class="depoimentos-quote-divider" aria-hidden="true"></div>
+    <a href="#raiox" class="btn btn-pill btn-green" data-cta-position="depoimentos">
+      Agendar meu RaioX
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+    </a>
+  </div>
+</section>
+
+<section class="planos" id="planos">
+  <div class="planos-inner">
+    <div class="planos-header">
+      <p class="eyebrow planos-eyebrow">Planos</p>
+      <h2 class="planos-headline">Um plano para cada momento da sua corrida.</h2>
+      <p class="planos-subtext">O plano certo é definido no RaioX. Os valores abaixo são a partir de, no pagamento anual via PIX.</p>
+    </div>
+
+    <div class="planos-grid">
+
+      <article class="plano-card">
+        <span class="plano-fase">Fase 1</span>
+        <h3 class="plano-nome">START RUN</h3>
+        <p class="plano-desc">Base e estrutura para iniciantes que buscam correr com segurança.</p>
+        <div class="plano-preco">
+          <div class="plano-preco-principal">
+            <span class="plano-valor">R$ 159</span>
+            <span class="plano-periodo">/mês no anual</span>
+          </div>
+          <span class="plano-mensal">R$ 199 mensal</span>
+        </div>
+        <ul class="plano-features">
+          <li><span class="plano-check" aria-hidden="true"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>Diagnóstico inicial</li>
+          <li><span class="plano-check" aria-hidden="true"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>Controle de carga</li>
+          <li><span class="plano-check" aria-hidden="true"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>Professor presente</li>
+        </ul>
+        <a href="#raiox" class="btn btn-pill btn-outline-blue plano-cta" data-cta-position="planos-startrun">Conhecer no RaioX</a>
+      </article>
+
+      <article class="plano-card plano-card--destaque">
+        <span class="plano-badge">Mais procurado</span>
+        <span class="plano-fase">Fase 1+</span>
+        <h3 class="plano-nome">EVORUN 10</h3>
+        <p class="plano-desc">Foco em 5K e 10K com evolução estruturada e progressão real.</p>
+        <div class="plano-preco">
+          <div class="plano-preco-principal">
+            <span class="plano-valor">R$ 179</span>
+            <span class="plano-periodo">/mês no anual</span>
+          </div>
+          <span class="plano-mensal">R$ 209 mensal</span>
+        </div>
+        <ul class="plano-features">
+          <li><span class="plano-check" aria-hidden="true"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>Tudo do Start Run</li>
+          <li><span class="plano-check" aria-hidden="true"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>Educativos de corrida</li>
+          <li><span class="plano-check" aria-hidden="true"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>Progressão de volume</li>
+          <li><span class="plano-check" aria-hidden="true"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>Acesso ao grupo de corrida</li>
+        </ul>
+        <a href="#raiox" class="btn btn-pill btn-green plano-cta" data-cta-position="planos-evorun10">Conhecer no RaioX</a>
+      </article>
+
+      <article class="plano-card">
+        <span class="plano-fase">Fases 2 e 3</span>
+        <h3 class="plano-nome">ENDURANCE</h3>
+        <p class="plano-desc">Preparação para meia maratona e maratona. 21K / 42K.</p>
+        <div class="plano-preco">
+          <div class="plano-preco-principal">
+            <span class="plano-valor">R$ 209</span>
+            <span class="plano-periodo">/mês no anual</span>
+          </div>
+          <span class="plano-mensal">R$ 249 mensal</span>
+        </div>
+        <ul class="plano-features">
+          <li><span class="plano-check" aria-hidden="true"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>Periodização avançada</li>
+          <li><span class="plano-check" aria-hidden="true"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>Pliometria e velocidade</li>
+          <li><span class="plano-check" aria-hidden="true"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>Estratégia de prova</li>
+        </ul>
+        <a href="#raiox" class="btn btn-pill btn-outline-blue plano-cta" data-cta-position="planos-endurance">Conhecer no RaioX</a>
+      </article>
+
+      <article class="plano-card">
+        <span class="plano-fase">Trail</span>
+        <h3 class="plano-nome">TRAIL FULL</h3>
+        <p class="plano-desc">Preparação completa para trail running competitivo.</p>
+        <div class="plano-preco">
+          <div class="plano-preco-principal">
+            <span class="plano-valor">R$ 250</span>
+            <span class="plano-periodo">/mês no anual</span>
+          </div>
+          <span class="plano-mensal">R$ 290 mensal</span>
+        </div>
+        <ul class="plano-features">
+          <li><span class="plano-check" aria-hidden="true"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>Treino específico de trilha</li>
+          <li><span class="plano-check" aria-hidden="true"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>Força e resistência</li>
+          <li><span class="plano-check" aria-hidden="true"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>Preparação para terreno</li>
+        </ul>
+        <a href="#raiox" class="btn btn-pill btn-outline-blue plano-cta" data-cta-position="planos-trailfull">Conhecer no RaioX</a>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<section class="raiox" id="raiox">
+  <div class="raiox-inner">
+    <div class="raiox-body">
+      <span class="raiox-eyebrow">Avaliação Gratuita</span>
+      <h2 class="raiox-headline">O Papel do RaioX LARUN</h2>
+      <p class="raiox-text">
+        Corredor não precisa ser convencido de que método importa.
+        Precisa saber o que o corpo aguenta de verdade, e o que já está sendo exigido além do limite.
+        <strong>Fale com um especialista da equipe LARUN</strong> e saia sabendo o que ajustar e qual plano seguir.
+      </p>
+      <div class="raiox-specs">
+        <span class="raiox-spec">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          ~7 minutos
+        </span>
+        <span class="raiox-spec">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          Sem custo
+        </span>
+        <span class="raiox-spec">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 10l4.553-2.069A1 1 0 0121 8.82v6.36a1 1 0 01-1.447.894L15 14"/><rect x="2" y="7" width="13" height="10" rx="2"/></svg>
+          Online ou presencial
+        </span>
+      </div>
+    </div>
+    <div class="raiox-cta-wrap">
+      <a href="https://wa.me/5519971439283" target="_blank" rel="noopener" class="btn btn-pill btn-green whatsapp-cta" data-cta-position="raiox">Quero minha avaliação gratuita</a>
+    </div>
+  </div>
+</section>
+
+<section class="faq" id="faq">
+  <div class="faq-inner">
+    <div class="faq-header">
+      <h2 class="faq-headline">
+        <span class="faq-headline-line">As Perguntas que</span>
+        <span class="faq-headline-accent">Travam a Decisão</span>
+      </h2>
+      <p class="faq-subtext">Tão importante quanto travar no treino é travar na escolha. Aqui está cada dúvida, respondida sem enrolação.</p>
+    </div>
+
+    <div class="faq-grid">
+
+      <article class="faq-card">
+        <div class="faq-icon-wrap" aria-hidden="true">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="2" x2="12" y2="22"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+        </div>
+        <div class="faq-card-body">
+          <h3>É caro.</h3>
+          <div class="faq-title-line"></div>
+          <p>Pensa no outro lado: quanto custa uma fisioterapia? Quanto custa ficar parado 3 meses por lesão? A LARUN é investimento em longevidade. O plano mais acessível começa em R$ 159/mês. O custo de treinar sem diagnóstico costuma ser medido em semanas de afastamento — não em mensalidade.</p>
+        </div>
+      </article>
+
+      <article class="faq-card">
+        <div class="faq-icon-wrap" aria-hidden="true">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="2" width="6" height="4" rx="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><path d="m9 14 2 2 4-4"/></svg>
+        </div>
+        <div class="faq-card-body">
+          <h3>Já treinei com assessoria e não deu resultado.</h3>
+          <div class="faq-title-line"></div>
+          <p>A diferença está no ponto de partida. A maioria começa com planilha. A LARUN começa com diagnóstico — identificando o que travou antes de prescrever o que vem a seguir. E tem professor presente em todos os treinos. Não é assessoria à distância.</p>
+        </div>
+      </article>
+
+      <article class="faq-card">
+        <div class="faq-icon-wrap" aria-hidden="true">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="7" height="7" x="3" y="3" rx="1"/><rect width="7" height="7" x="14" y="3" rx="1"/><rect width="7" height="7" x="14" y="14" rx="1"/><rect width="7" height="7" x="3" y="14" rx="1"/></svg>
+        </div>
+        <div class="faq-card-body">
+          <h3>Só preciso de planilha.</h3>
+          <div class="faq-title-line"></div>
+          <p>Planilha sozinha não identifica padrão de movimento errado. Não corrige deficiência estrutural. Não previne a lesão que aparece quando você sobe volume sem base. Se o objetivo é evoluir com segurança e durar correndo, vale a conversa no RaioX — sem compromisso.</p>
+        </div>
+      </article>
+
+      <article class="faq-card">
+        <div class="faq-icon-wrap" aria-hidden="true">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        </div>
+        <div class="faq-card-body">
+          <h3>Não tenho tempo.</h3>
+          <div class="faq-title-line"></div>
+          <p>Exatamente por isso o modelo de horário marcado existe. Você agenda no melhor horário, treina com método dirigido e sai. Não é academia que exige horas. E o RaioX que começa tudo é rápido.</p>
+        </div>
+      </article>
+
+      <article class="faq-card">
+        <div class="faq-icon-wrap" aria-hidden="true">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6.5 6.5h11m-11 11h11M3 6h3.5v12H3zM17.5 6H21v12h-3.5z"/></svg>
+        </div>
+        <div class="faq-card-body">
+          <h3>Já tenho treinador.</h3>
+          <div class="faq-title-line"></div>
+          <p>O RaioX não substitui seu treinador. É o diagnóstico estrutural que todo plano deveria ter como base — e que a maioria dos treinadores não tem ferramentas presenciais para fazer. Os dois juntos são vantagem.</p>
+        </div>
+      </article>
+
+      <article class="faq-card">
+        <div class="faq-icon-wrap" aria-hidden="true">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+        </div>
+        <div class="faq-card-body">
+          <h3>Não sei se vou me adaptar / consigo seguir o método.</h3>
+          <div class="faq-title-line"></div>
+          <p>Não existe nível de entrada errado. O RaioX identifica onde você está agora, não onde deveria estar. O método se ajusta ao seu corpo — não o contrário. Quem trava não é quem começa devagar. É quem tenta seguir um plano genérico que não foi feito para ele.</p>
+        </div>
+      </article>
+
+    </div>
+
+    <div class="faq-conclusion-box">
+      <div class="faq-conclusion-content">
+        <span class="faq-conclusion-eyebrow">O Método LARUN</span>
+        <h3>A resposta para cada dúvida é a <span>mesma.</span></h3>
+        <p>Diagnóstico antes de prescrição. Professor presente em todos os treinos. Método estruturado em cinco pilares que evoluem junto com você.</p>
+        <a href="#raiox" class="btn btn-pill btn-green" data-cta-position="faq-conclusion">Quero minha avaliação gratuita</a>
+        <div class="faq-trust-badges">
+          <span class="faq-trust-badge"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Avaliação completa</span>
+          <span class="faq-trust-badge"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Plano personalizado</span>
+          <span class="faq-trust-badge"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Sem compromisso</span>
+        </div>
+      </div>
+      <div class="faq-conclusion-photo" aria-hidden="true">
+        <img src="uploads/acompanhamento-professor-larun.png" alt="" loading="lazy" decoding="async">
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="perguntas" id="perguntas">
+  <div class="perguntas-inner">
+    <div class="perguntas-header">
+      <p class="eyebrow perguntas-eyebrow">Perguntas Frequentes</p>
+      <h2 class="perguntas-headline">Tudo sobre o RaioX LARUN.</h2>
+    </div>
+
+    <div class="perguntas-accordion">
+
+      <div class="pq-item">
+        <button class="pq-trigger" type="button" aria-expanded="false">
+          <span class="pq-trigger-text">O RaioX LARUN tem algum custo?</span>
+          <span class="pq-icon" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
+        </button>
+        <div class="pq-body">
+          <div class="pq-body-inner">
+            <span class="pq-lead">Não.</span>
+            <p>O RaioX LARUN é uma conversa estratégica gratuita, com cerca de 7 minutos, realizada por ligação ou videochamada com um especialista da nossa equipe.</p>
+            <p>O objetivo não é vender um plano. É entender o seu momento na corrida e mostrar qual caminho faz sentido para você seguir com mais segurança e clareza.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="pq-item">
+        <button class="pq-trigger" type="button" aria-expanded="false">
+          <span class="pq-trigger-text">O RaioX é uma aula experimental?</span>
+          <span class="pq-icon" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
+        </button>
+        <div class="pq-body">
+          <div class="pq-body-inner">
+            <span class="pq-lead">Não.</span>
+            <p>Também não é uma avaliação técnica completa.</p>
+            <p>O RaioX é uma conversa estratégica para entender seu histórico, seus objetivos e identificar se existe alguma limitação que merece atenção antes de indicar qualquer programa.</p>
+            <p>Na LARUN, acreditamos que primeiro vem o diagnóstico. Só depois faz sentido falar sobre treino.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="pq-item">
+        <button class="pq-trigger" type="button" aria-expanded="false">
+          <span class="pq-trigger-text">O RaioX serve para quem está começando agora?</span>
+          <span class="pq-icon" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
+        </button>
+        <div class="pq-body">
+          <div class="pq-body-inner">
+            <span class="pq-lead">Sim.</span>
+            <p>Na verdade, é justamente quem está começando que mais se beneficia dessa conversa.</p>
+            <p>Muitos corredores iniciam treinando no improviso. O problema é que os erros normalmente aparecem apenas quando o volume aumenta.</p>
+            <p>O RaioX ajuda você a entender qual é o melhor ponto de partida para construir uma evolução consistente, sem precisar descobrir os erros quando eles já viraram dor ou lesão.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="pq-item">
+        <button class="pq-trigger" type="button" aria-expanded="false">
+          <span class="pq-trigger-text">O RaioX também serve para quem já corre há bastante tempo?</span>
+          <span class="pq-icon" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
+        </button>
+        <div class="pq-body">
+          <div class="pq-body-inner">
+            <span class="pq-lead">Sim.</span>
+            <p>Quanto mais experiência você tem, mais importante fica saber se o esforço que está fazendo está indo na direção certa.</p>
+            <p>Muitos corredores treinam há meses, ou até anos, sem conseguir evoluir no pace ou aumentar a distância porque existe um fator estrutural que nunca foi identificado.</p>
+            <p>O RaioX existe justamente para trazer essa clareza antes que você continue insistindo na mesma estratégia.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="pq-item">
+        <button class="pq-trigger" type="button" aria-expanded="false">
+          <span class="pq-trigger-text">Quanto tempo dura o RaioX?</span>
+          <span class="pq-icon" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
+        </button>
+        <div class="pq-body">
+          <div class="pq-body-inner">
+            <p>A conversa dura aproximadamente <strong>7 minutos</strong>.</p>
+            <p>É um encontro rápido, online, pensado para entender seu momento na corrida e orientar o próximo passo de forma objetiva.</p>
+            <p>Você pode fazer pelo celular ou pelo Google Meet, sem precisar sair de casa.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="pq-item">
+        <button class="pq-trigger" type="button" aria-expanded="false">
+          <span class="pq-trigger-text">O que acontece depois do RaioX?</span>
+          <span class="pq-icon" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
+        </button>
+        <div class="pq-body">
+          <div class="pq-body-inner">
+            <p>Depois da conversa, o especialista explica o que observou e orienta qual caminho faz mais sentido para o seu momento.</p>
+            <p>Se houver aderência ao Método LARUN, ele apresenta o programa mais indicado para seus objetivos.</p>
+            <p>Se não fizer sentido seguir agora, você ainda termina a conversa com uma visão muito mais clara sobre sua corrida.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="pq-item">
+        <button class="pq-trigger" type="button" aria-expanded="false">
+          <span class="pq-trigger-text">Posso entrar na LARUN sem fazer o RaioX?</span>
+          <span class="pq-icon" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
+        </button>
+        <div class="pq-body">
+          <div class="pq-body-inner">
+            <span class="pq-lead">Preferimos que não.</span>
+            <p>Um dos princípios da LARUN é nunca prescrever um treino antes de entender quem é o corredor.</p>
+            <p>Seria como tentar resolver um problema sem saber sua causa.</p>
+            <p>Por isso, todo o processo começa pelo RaioX: uma conversa rápida para compreender seu momento e indicar o caminho mais adequado para você.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="pq-item">
+        <button class="pq-trigger" type="button" aria-expanded="false">
+          <span class="pq-trigger-text">E se eu decidir não continuar?</span>
+          <span class="pq-icon" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
+        </button>
+        <div class="pq-body">
+          <div class="pq-body-inner">
+            <span class="pq-lead">Sem problema.</span>
+            <p>O RaioX não gera nenhuma obrigação de matrícula.</p>
+            <p>Nosso objetivo é que você tome uma decisão com clareza, entendendo o seu momento e sabendo qual direção faz mais sentido para a sua evolução.</p>
+            <p>Se decidir seguir conosco, ótimo. Se preferir esperar, a decisão continua sendo sua.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="pq-item">
+        <button class="pq-trigger" type="button" aria-expanded="false">
+          <span class="pq-trigger-text">Por que vocês começam pelo RaioX em vez de oferecer uma aula experimental?</span>
+          <span class="pq-icon" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
+        </button>
+        <div class="pq-body">
+          <div class="pq-body-inner">
+            <p><strong>Porque uma aula mostra como é treinar. O RaioX mostra por que você precisa treinar de determinada forma.</strong></p>
+            <p>Na LARUN, acreditamos que o maior erro não é treinar pouco. É treinar sem entender o que realmente está limitando sua evolução.</p>
+            <p>Por isso, antes de qualquer plano ou prescrição, o primeiro passo é compreender seu histórico, seus objetivos e o seu momento atual. Esse princípio — <strong>diagnóstico antes da prescrição</strong> — é a base do Método LARUN.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- CTA AGENDAMENTO -->
+<section class="cta-agendamento" id="agendar">
+  <div class="cta-agendamento-inner">
+    <div class="cta-agendamento-text">
+      <p class="eyebrow cta-agendamento-eyebrow">Agende Agora</p>
+      <h2 class="cta-agendamento-headline">Agende seu RaioX LARUN.</h2>
+      <p class="cta-agendamento-desc">Não é aula experimental. É um diagnóstico para descobrir o que falta no seu corpo para chegar onde você já decidiu que vai — sem quebrar no meio do caminho.</p>
+      <ul class="cta-agendamento-benefits">
+        <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Diagnóstico antes da prescrição</li>
+        <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Horário marcado, professor sempre presente</li>
+        <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Você sai com mais clareza para decidir</li>
+      </ul>
+    </div>
+
+    <div class="cta-form-card">
+      <h3 class="cta-form-card-title">Garanta seu diagnóstico</h3>
+      <form id="raioxForm" novalidate>
+        <div class="form-group">
+          <label class="form-label" for="formNome">Seu nome</label>
+          <input class="form-input" type="text" id="formNome" name="nome" placeholder="Como podemos te chamar?" required autocomplete="name">
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="formWhats">WhatsApp</label>
+          <input class="form-input" type="tel" id="formWhats" name="whatsapp" placeholder="ex: 11 90000-0000" required autocomplete="tel">
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="formFase">Sua fase hoje</label>
+          <div class="form-select-wrap">
+            <select class="form-select" id="formFase" name="fase" required>
+              <option value="" disabled selected>Selecione</option>
+              <option value="Fase 1 · 5K / 10K">Fase 1 · 5K / 10K</option>
+              <option value="Fase 2 · Meia Maratona">Fase 2 · Meia Maratona</option>
+              <option value="Fase 3 · Maratona">Fase 3 · Maratona</option>
+              <option value="Ainda não corro regularmente">Ainda não corro regularmente</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-consent">
+          <input type="checkbox" id="formConsent" name="consent" required>
+          <label class="form-consent-text" for="formConsent">Ao solicitar o agendamento, você concorda com nossa <a href="#" target="_blank">Política de Privacidade</a> e com o tratamento dos seus dados conforme a LGPD.</label>
+        </div>
+        <button type="submit" class="btn btn-pill btn-green form-submit">Agendar meu RaioX</button>
+        <p class="form-hint">Resposta em até 30 min no horário de atendimento.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- QUOTE STRIP -->
+<div class="quote-strip">
+  <p class="quote-strip-text">
+    <span class="quote-strip-line">"Eu corro sem quebrar.</span>
+    <span class="quote-strip-accent">E você?"</span>
+  </p>
+</div>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-grid">
+
+      <div class="footer-col-brand">
+        <div class="footer-logo">
+          <img src="assets/larun-horizontal-onblue.png" alt="LARUN" height="44" loading="lazy">
+        </div>
+        <p class="footer-desc">Estúdio e Grupo de Corrida com o Método LARUN.<br>Fundado por Leandro Silva e Adriana Mazaro.</p>
+      </div>
+
+      <div>
+        <p class="footer-col-title">Onde Estamos</p>
+        <address class="footer-address">
+          R. Vinte e Oito de Outubro, 72 — Centro<br>
+          São Bernardo do Campo, SP
+          <span class="footer-address-divider"></span>
+          Seg–Sex 05:30–10:00 · 16:00–21:00<br>
+          Sáb 07:00–11:00 · Dom fechado
+        </address>
+      </div>
+
+      <div>
+        <p class="footer-col-title">Fale com a Gente</p>
+        <div class="footer-contacts">
+          <a href="https://wa.me/5519971439283" target="_blank" rel="noopener" class="footer-contact-link whatsapp-cta" data-cta-position="footer">
+            <svg width="18" height="18" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0a8 8 0 0 0-6.9 12.06L0 16l4-.95A8 8 0 1 0 8 0zm4.52 11.4c-.19.53-1.12 1.02-1.54 1.06-.4.04-.74.18-2.5-.52-2.12-.85-3.5-2.95-3.6-3.08-.1-.13-.85-1.13-.85-2.15 0-1.02.53-1.51.72-1.72.19-.21.42-.26.56-.26.14 0 .28 0 .4.01.13.01.31-.05.48.37.18.43.6 1.46.65 1.57.05.1.09.23.02.36-.07.13-.11.21-.21.33-.1.12-.21.27-.3.36-.1.1-.2.2-.09.4.12.2.55.91 1.18 1.47.81.72 1.49.94 1.7 1.04.21.1.33.09.46-.05.13-.14.5-.58.64-.78.13-.2.27-.16.45-.1.18.07 1.15.54 1.34.64.2.1.33.15.38.23.05.08.05.46-.14.99z"/></svg>
+            WhatsApp
+          </a>
+          <a href="https://instagram.com/larunestudio" target="_blank" rel="noopener" class="footer-contact-link">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+            @larunestudio
+          </a>
+          <a href="politica-de-privacidade.html" class="footer-contact-link">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+            Política de Privacidade
+          </a>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="footer-bar">
+      <span class="footer-bar-copy">© 2026 LARUN · Preparação Física para Corredores</span>
+      <span class="footer-bar-tagline">Corra Sem Quebrar.</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // ===== HEADER: scroll shadow + drawer mobile =====
+  (function () {
+    var header = document.getElementById('siteHeader');
+    var burger = document.getElementById('headerBurger');
+    var drawer = document.getElementById('mobileDrawer');
+    var overlay = document.getElementById('drawerOverlay');
+    var drawerClose = document.getElementById('drawerClose');
+    var drawerLinks = drawer.querySelectorAll('a');
+
+    function onScroll() {
+      if (window.scrollY > 80) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+      }
+    }
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+
+    function openDrawer() {
+      drawer.classList.add('active');
+      overlay.classList.add('active');
+      burger.classList.add('active');
+      burger.setAttribute('aria-expanded', 'true');
+      drawer.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeDrawer() {
+      drawer.classList.remove('active');
+      overlay.classList.remove('active');
+      burger.classList.remove('active');
+      burger.setAttribute('aria-expanded', 'false');
+      drawer.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+    }
+    burger.addEventListener('click', function () {
+      if (drawer.classList.contains('active')) {
+        closeDrawer();
+      } else {
+        openDrawer();
+      }
+    });
+    drawerClose.addEventListener('click', closeDrawer);
+    overlay.addEventListener('click', closeDrawer);
+    drawerLinks.forEach(function (link) {
+      link.addEventListener('click', closeDrawer);
+    });
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') closeDrawer();
+    });
+  })();
+
+  // ===== HERO: entrada sequencial da headline (só na primeira carga) =====
+  (function () {
+    var headline = document.getElementById('heroHeadline');
+    requestAnimationFrame(function () {
+      headline.classList.add('in-view');
+    });
+  })();
+
+  // ===== NÚMEROS: contador animado (dispara uma vez ao entrar no viewport) =====
+  (function () {
+    var section = document.getElementById('numeros');
+    if (!section) return;
+    var items = section.querySelectorAll('.numero-item');
+    var prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    function finalValue(el) {
+      var target = el.getAttribute('data-target');
+      var prefix = el.getAttribute('data-prefix') || '';
+      var suffix = el.getAttribute('data-suffix') || '';
+      return prefix + target + suffix;
+    }
+
+    if (prefersReducedMotion) {
+      items.forEach(function (el) {
+        el.querySelector('.numero-value').textContent = finalValue(el);
+      });
+      return;
+    }
+
+    function easeOutQuad(t) { return t * (2 - t); }
+
+    function animateCount(el) {
+      var target = parseFloat(el.getAttribute('data-target'));
+      var prefix = el.getAttribute('data-prefix') || '';
+      var suffix = el.getAttribute('data-suffix') || '';
+      var valueEl = el.querySelector('.numero-value');
+      var duration = 1400;
+      var start = null;
+
+      function step(timestamp) {
+        if (!start) start = timestamp;
+        var progress = Math.min((timestamp - start) / duration, 1);
+        var current = Math.round(target * easeOutQuad(progress));
+        valueEl.textContent = prefix + current + suffix;
+        if (progress < 1) requestAnimationFrame(step);
+      }
+      requestAnimationFrame(step);
+    }
+
+    var observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          items.forEach(animateCount);
+          observer.disconnect();
+        }
+      });
+    }, { threshold: 0.3 });
+
+    observer.observe(section);
+  })();
+
+  // ===== FASES DO CORREDOR: troca de tab com fade =====
+  (function () {
+    var tabs = Array.prototype.slice.call(document.querySelectorAll('.fase-tab'));
+    var panels = Array.prototype.slice.call(document.querySelectorAll('.fase-panel'));
+    if (!tabs.length) return;
+
+    function activate(num) {
+      tabs.forEach(function (tab) {
+        var isActive = tab.getAttribute('data-fase') === num;
+        tab.classList.toggle('active', isActive);
+        tab.setAttribute('aria-selected', isActive ? 'true' : 'false');
+      });
+      panels.forEach(function (panel) {
+        var isTarget = panel.getAttribute('data-fase-panel') === num;
+        if (isTarget) {
+          panel.classList.add('active');
+          requestAnimationFrame(function () {
+            requestAnimationFrame(function () {
+              panel.classList.add('visible');
+            });
+          });
+        } else if (panel.classList.contains('active')) {
+          panel.classList.remove('visible');
+          setTimeout(function () {
+            panel.classList.remove('active');
+          }, 200);
+        }
+      });
+    }
+
+    tabs.forEach(function (tab) {
+      tab.addEventListener('click', function () {
+        activate(tab.getAttribute('data-fase'));
+      });
+    });
+  })();
+
+  // ===== GALERIA DO ESTÚDIO: carrossel com auto-play =====
+  (function () {
+    var gallery = document.querySelector('.estudio-gallery');
+    var dotsContainer = document.getElementById('estudioDots');
+    if (!gallery || !dotsContainer) return;
+
+    var figures = Array.prototype.slice.call(gallery.querySelectorAll('.estudio-fig'));
+    var currentIndex = 0;
+    var autoTimer = null;
+    var userInteracting = false;
+
+    figures.forEach(function (fig, i) {
+      var dot = document.createElement('button');
+      dot.className = 'estudio-dot';
+      dot.type = 'button';
+      dot.setAttribute('aria-label', 'Ir para foto ' + (i + 1));
+      if (i === 0) dot.classList.add('active');
+      dot.addEventListener('click', function () { goTo(i); });
+      dotsContainer.appendChild(dot);
+    });
+    var dots = Array.prototype.slice.call(dotsContainer.children);
+
+    function updateDots(idx) {
+      dots.forEach(function (d, i) { d.classList.toggle('active', i === idx); });
+    }
+
+    function goTo(index) {
+      currentIndex = index;
+      var fig = figures[index];
+      var target = gallery.scrollLeft + fig.getBoundingClientRect().left - gallery.getBoundingClientRect().left;
+      gallery.scrollTo({ left: target, behavior: 'smooth' });
+      updateDots(index);
+    }
+
+    function advance() {
+      if (userInteracting) return;
+      goTo((currentIndex + 1) % figures.length);
+    }
+
+    function startTimer() { autoTimer = setInterval(advance, 3500); }
+    function stopTimer() { clearInterval(autoTimer); }
+
+    // Sincronizar dot no scroll manual
+    var scrollRaf;
+    gallery.addEventListener('scroll', function () {
+      cancelAnimationFrame(scrollRaf);
+      scrollRaf = requestAnimationFrame(function () {
+        var galleryLeft = gallery.getBoundingClientRect().left;
+        var closest = 0;
+        var minDist = Infinity;
+        figures.forEach(function (fig, i) {
+          var dist = Math.abs(fig.getBoundingClientRect().left - galleryLeft);
+          if (dist < minDist) { minDist = dist; closest = i; }
+        });
+        currentIndex = closest;
+        updateDots(closest);
+      });
+    }, { passive: true });
+
+    // Pausar no hover (desktop)
+    gallery.addEventListener('mouseenter', function () { userInteracting = true; });
+    gallery.addEventListener('mouseleave', function () { userInteracting = false; });
+
+    // Pausar e reiniciar no touch (mobile)
+    gallery.addEventListener('touchstart', function () {
+      userInteracting = true;
+      stopTimer();
+    }, { passive: true });
+    gallery.addEventListener('touchend', function () {
+      userInteracting = false;
+      stopTimer();
+      startTimer();
+    }, { passive: true });
+
+    startTimer();
+  })();
+
+  // ===== DEPOIMENTOS: carrega o vídeo do YouTube só quando o usuário clica em play =====
+  (function () {
+    var thumbs = document.querySelectorAll('.video-thumb');
+    thumbs.forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var card = btn.closest('.video-card');
+        var id = card.getAttribute('data-yt-id');
+        var wrapper = document.createElement('div');
+        wrapper.className = 'video-embed';
+        var iframe = document.createElement('iframe');
+        iframe.src = 'https://www.youtube.com/embed/' + id + '?autoplay=1&rel=0';
+        iframe.title = 'Depoimento em vídeo';
+        iframe.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture');
+        iframe.setAttribute('allowfullscreen', '');
+        iframe.setAttribute('frameborder', '0');
+        wrapper.appendChild(iframe);
+        btn.replaceWith(wrapper);
+      });
+    });
+  })();
+
+  // ===== WHATSAPP CTAs: mensagens pré-formatadas por origem =====
+  (function () {
+    var BASE = 'https://wa.me/5519971439283?text=';
+    var msgs = {
+      'hero-whatsapp':           'Olá, equipe LARUN! Vi o site e quero saber mais sobre o método de preparação para corrida. Qual é o próximo passo?',
+      'posicionamento-whatsapp': 'Olá, equipe LARUN! Me interessei pelo método e quero entender como funciona o processo de avaliação.',
+      'raiox':                   'Olá, equipe LARUN! Quero agendar minha avaliação gratuita no RaioX. Como faço para marcar?',
+      'fases-fase1':             'Olá, equipe LARUN! Estou na fase 5k / 10k e quero agendar meu RaioX para entender o que preciso evoluir.',
+      'fases-fase2':             'Olá, equipe LARUN! Estou na fase de meia maratona (21k) e quero agendar meu RaioX para chegar no próximo nível.',
+      'fases-fase3':             'Olá, equipe LARUN! Estou na fase de maratona (42k) e quero agendar meu RaioX para entender o que está me travando.',
+      'depoimentos':             'Olá, equipe LARUN! Vi os resultados de outros alunos no site e quero entender como funciona o método.',
+      'planos-startrun':         'Olá, equipe LARUN! Me interessei pelo plano StartRun e quero saber mais antes de agendar o RaioX.',
+      'planos-evorun10':         'Olá, equipe LARUN! Me interessei pelo plano EvoRun 10k e quero saber mais antes de agendar o RaioX.',
+      'planos-endurance':        'Olá, equipe LARUN! Me interessei pelo plano Endurance (21k) e quero saber mais antes de agendar o RaioX.',
+      'planos-trailfull':        'Olá, equipe LARUN! Me interessei pelo plano TrailFull (42k) e quero saber mais antes de agendar o RaioX.',
+      'faq-conclusion':          'Olá, equipe LARUN! Li as perguntas frequentes no site e quero agendar minha avaliação gratuita no RaioX.',
+      'footer':                  'Olá, equipe LARUN! Vim pelo site e gostaria de tirar uma dúvida.'
+    };
+    var DEFAULT = 'Olá, equipe LARUN! Vim pelo site e quero saber mais sobre o método de preparação para corrida.';
+
+    document.querySelectorAll('a.whatsapp-cta').forEach(function (el) {
+      el.addEventListener('click', function (e) {
+        e.preventDefault();
+        var pos = el.getAttribute('data-cta-position') || '';
+        var msg = msgs[pos] || DEFAULT;
+        window.open(BASE + encodeURIComponent(msg), '_blank', 'noopener');
+      });
+    });
+  })();
+
+  // ===== FORMULÁRIO RAIOX: envia via WhatsApp =====
+  (function () {
+    var form = document.getElementById('raioxForm');
+    if (!form) return;
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var nome = form.querySelector('[name="nome"]').value.trim();
+      var whats = form.querySelector('[name="whatsapp"]').value.trim();
+      var fase = form.querySelector('[name="fase"]').value;
+      var consent = form.querySelector('[name="consent"]').checked;
+      if (!nome || !whats || !fase || !consent) {
+        form.reportValidity();
+        return;
+      }
+      var msg = 'Olá! Quero agendar meu RaioX LARUN.\n\nNome: ' + nome + '\nWhatsApp: ' + whats + '\nFase atual: ' + fase;
+      window.open('https://wa.me/5519971439283?text=' + encodeURIComponent(msg), '_blank');
+    });
+  })();
+
+  // ===== PERGUNTAS FREQUENTES: accordion =====
+  (function () {
+    var items = document.querySelectorAll('.pq-item');
+    if (!items.length) return;
+    items.forEach(function (item) {
+      var trigger = item.querySelector('.pq-trigger');
+      var body = item.querySelector('.pq-body');
+      trigger.addEventListener('click', function () {
+        var isActive = item.classList.contains('active');
+        items.forEach(function (i) {
+          i.classList.remove('active');
+          i.querySelector('.pq-trigger').setAttribute('aria-expanded', 'false');
+          i.querySelector('.pq-body').style.maxHeight = '';
+        });
+        if (!isActive) {
+          item.classList.add('active');
+          trigger.setAttribute('aria-expanded', 'true');
+          body.style.maxHeight = body.scrollHeight + 'px';
+        }
+      });
+    });
+  })();
+</script>
+</body>
+</html>
