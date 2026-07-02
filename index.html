@@ -3677,32 +3677,15 @@
     });
   })();
 
-  // ===== WHATSAPP CTAs: mensagens pré-formatadas por origem =====
+  // ===== WHATSAPP CTAs: mensagem padrão de identificação de origem =====
   (function () {
+    var MSG = 'Olá! Vi o site e quero agendar meu RaioX gratuito.';
     var BASE = 'https://wa.me/5519971439283?text=';
-    var msgs = {
-      'hero-whatsapp':           'Olá, equipe LARUN! Vi o site e quero saber mais sobre o método de preparação para corrida. Qual é o próximo passo?',
-      'posicionamento-whatsapp': 'Olá, equipe LARUN! Me interessei pelo método e quero entender como funciona o processo de avaliação.',
-      'raiox':                   'Olá, equipe LARUN! Quero agendar minha avaliação gratuita no RaioX. Como faço para marcar?',
-      'fases-fase1':             'Olá, equipe LARUN! Estou na fase 5k / 10k e quero agendar meu RaioX para entender o que preciso evoluir.',
-      'fases-fase2':             'Olá, equipe LARUN! Estou na fase de meia maratona (21k) e quero agendar meu RaioX para chegar no próximo nível.',
-      'fases-fase3':             'Olá, equipe LARUN! Estou na fase de maratona (42k) e quero agendar meu RaioX para entender o que está me travando.',
-      'depoimentos':             'Olá, equipe LARUN! Vi os resultados de outros alunos no site e quero entender como funciona o método.',
-      'planos-startrun':         'Olá, equipe LARUN! Me interessei pelo plano StartRun e quero saber mais antes de agendar o RaioX.',
-      'planos-evorun10':         'Olá, equipe LARUN! Me interessei pelo plano EvoRun 10k e quero saber mais antes de agendar o RaioX.',
-      'planos-endurance':        'Olá, equipe LARUN! Me interessei pelo plano Endurance (21k) e quero saber mais antes de agendar o RaioX.',
-      'planos-trailfull':        'Olá, equipe LARUN! Me interessei pelo plano TrailFull (42k) e quero saber mais antes de agendar o RaioX.',
-      'faq-conclusion':          'Olá, equipe LARUN! Li as perguntas frequentes no site e quero agendar minha avaliação gratuita no RaioX.',
-      'footer':                  'Olá, equipe LARUN! Vim pelo site e gostaria de tirar uma dúvida.'
-    };
-    var DEFAULT = 'Olá, equipe LARUN! Vim pelo site e quero saber mais sobre o método de preparação para corrida.';
 
     document.querySelectorAll('a.whatsapp-cta').forEach(function (el) {
       el.addEventListener('click', function (e) {
         e.preventDefault();
-        var pos = el.getAttribute('data-cta-position') || '';
-        var msg = msgs[pos] || DEFAULT;
-        window.open(BASE + encodeURIComponent(msg), '_blank', 'noopener');
+        window.open(BASE + encodeURIComponent(MSG), '_blank', 'noopener');
       });
     });
   })();
@@ -3721,7 +3704,7 @@
         form.reportValidity();
         return;
       }
-      var msg = 'Olá! Quero agendar meu RaioX LARUN.\n\nNome: ' + nome + '\nWhatsApp: ' + whats + '\nFase atual: ' + fase;
+      var msg = 'Olá! Vi o site e quero agendar meu RaioX gratuito.\n\nNome: ' + nome + '\nWhatsApp: ' + whats + '\nFase atual: ' + fase;
       window.open('https://wa.me/5519971439283?text=' + encodeURIComponent(msg), '_blank');
     });
   })();
