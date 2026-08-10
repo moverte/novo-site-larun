@@ -1177,35 +1177,16 @@
     gap: 16px;
     padding: 20px;
   }
-  .depoimento-photo {
+  .depoimento-avatar {
     flex: 0 0 120px;
     align-self: flex-start;
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-  }
-  .depoimento-avatar {
-    aspect-ratio: 1 / 1;
     border-radius: 16px;
     overflow: hidden;
     background: linear-gradient(160deg, rgba(5, 55, 160, 0.1), rgba(145, 200, 75, 0.18));
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--color-blue);
-  }
-  .depoimento-signature {
-    font-family: var(--font-ui);
-    font-weight: 600;
-    font-size: 0.68rem;
-    line-height: 1.2;
-    color: var(--text-muted);
-    text-align: center;
   }
   .depoimento-avatar img {
     width: 100%;
-    height: 100%;
-    object-fit: cover;
+    height: auto;
     display: block;
   }
   .depoimento-content {
@@ -1227,18 +1208,25 @@
     padding: 4px 12px;
     border-radius: var(--radius-pill);
   }
+  .depoimento-signature {
+    font-family: var(--font-ui);
+    font-weight: 600;
+    font-size: 0.8rem;
+    line-height: 1.2;
+    color: var(--text-muted);
+  }
   .depoimento-content h3 {
     font-family: var(--font-display);
     font-weight: 900;
-    font-size: 0.98rem;
-    line-height: 1.35;
+    font-size: 0.95rem;
+    line-height: 1.45;
     text-transform: uppercase;
     letter-spacing: -0.005em;
     color: var(--text-strong);
   }
   .depoimento-desc {
     font-family: var(--font-body);
-    font-size: 0.92rem;
+    font-size: 0.95rem;
     line-height: 1.5;
     color: var(--text-muted);
   }
@@ -1288,9 +1276,7 @@
 
   @media (max-width: 480px) {
     .depoimento-top { flex-direction: column; padding: 0; }
-    .depoimento-photo { flex: none; width: 100%; gap: 0; }
-    .depoimento-avatar { width: 100%; aspect-ratio: 1 / 1; border-radius: 0; }
-    .depoimento-signature { padding: 8px 20px 0; text-align: left; }
+    .depoimento-avatar { flex: none; width: 100%; border-radius: 0; }
     .depoimento-content { padding: 16px 20px; }
   }
 
@@ -2735,14 +2721,12 @@
   <div class="depoimentos-grid">
     <article class="depoimento-card">
       <div class="depoimento-top">
-        <div class="depoimento-photo">
-          <div class="depoimento-avatar">
-            <img src="uploads/fabiana-marquioli-aluna-depoimento-larun.png" alt="Fabiana Marquioli, aluna LARUN, evoluiu de 500 metros para provas de 5km e 10km" loading="lazy" decoding="async">
-          </div>
-          <span class="depoimento-signature">Fabiana Marquioli</span>
+        <div class="depoimento-avatar">
+          <img src="uploads/fabiana-marquioli-aluna-depoimento-larun.png" alt="Fabiana Marquioli, aluna LARUN, evoluiu de 500 metros para provas de 5km e 10km" loading="lazy" decoding="async">
         </div>
         <div class="depoimento-content">
           <span class="depoimento-badge">Primeiros passos</span>
+          <span class="depoimento-signature">Fabiana Marquioli</span>
           <h3>Não conseguia correr 500 metros seguidos</h3>
           <p class="depoimento-desc">Hoje soma provas de 5km e 10km, com tempo caindo.</p>
         </div>
@@ -2757,14 +2741,12 @@
 
     <article class="depoimento-card">
       <div class="depoimento-top">
-        <div class="depoimento-photo">
-          <div class="depoimento-avatar">
-            <img src="uploads/amanda-mendes-aluna-depoimento-larun.jpg" alt="Amanda Mendes, aluna LARUN, corre mais de 21km após superar dor no joelho" loading="lazy" decoding="async">
-          </div>
-          <span class="depoimento-signature">Amanda Mendes</span>
+        <div class="depoimento-avatar">
+          <img src="uploads/amanda-mendes-aluna-depoimento-larun.jpg" alt="Amanda Mendes, aluna LARUN, corre mais de 21km após superar dor no joelho" loading="lazy" decoding="async">
         </div>
         <div class="depoimento-content">
           <span class="depoimento-badge">21 km</span>
+          <span class="depoimento-signature">Amanda Mendes</span>
           <h3>A dor no joelho impedia de treinar</h3>
           <p class="depoimento-desc">Hoje corre mais de 21km e evolui para provas de trailrun.</p>
         </div>
@@ -2779,14 +2761,12 @@
 
     <article class="depoimento-card">
       <div class="depoimento-top">
-        <div class="depoimento-photo">
-          <div class="depoimento-avatar">
-            <img src="uploads/andre-silva-aluno-depoimento-larun.jpg" alt="André Silva, aluno LARUN, correndo prova de montanha de 25km" loading="lazy" decoding="async">
-          </div>
-          <span class="depoimento-signature">André Silva</span>
+        <div class="depoimento-avatar">
+          <img src="uploads/andre-silva-aluno-depoimento-larun.jpg" alt="André Silva, aluno LARUN, correndo prova de montanha de 25km" loading="lazy" decoding="async">
         </div>
         <div class="depoimento-content">
           <span class="depoimento-badge">Montanha</span>
+          <span class="depoimento-signature">André Silva</span>
           <h3>Lesões ditavam o limite de cada treino</h3>
           <p class="depoimento-desc">Hoje sobe montanha em provas de 25km, com pódios.</p>
         </div>
@@ -2801,14 +2781,12 @@
 
     <article class="depoimento-card">
       <div class="depoimento-top">
-        <div class="depoimento-photo">
-          <div class="depoimento-avatar">
-            <img src="uploads/edivirgem-morais-aluna-depoimento-larun.jpg" alt="Edivirgem Morais, aluna LARUN, maratonista em provas de rua e montanha" loading="lazy" decoding="async">
-          </div>
-          <span class="depoimento-signature">Edivirgem Morais</span>
+        <div class="depoimento-avatar">
+          <img src="uploads/edivirgem-morais-aluna-depoimento-larun.jpg" alt="Edivirgem Morais, aluna LARUN, maratonista em provas de rua e montanha" loading="lazy" decoding="async">
         </div>
         <div class="depoimento-content">
           <span class="depoimento-badge">42 km</span>
+          <span class="depoimento-signature">Edivirgem Morais</span>
           <h3>Voltou do zero, em passos de 300 metros</h3>
           <p class="depoimento-desc">Hoje é maratonista, com provas longas de rua e montanha.</p>
         </div>
@@ -2823,14 +2801,12 @@
 
     <article class="depoimento-card">
       <div class="depoimento-top">
-        <div class="depoimento-photo">
-          <div class="depoimento-avatar">
-            <img src="uploads/ale-mendes-aluno-depoimento-larun.jpg" alt="Ale Mendes, aluno LARUN, na Maratona de Berlim e UpHill de 42km" loading="lazy" decoding="async">
-          </div>
-          <span class="depoimento-signature">Ale Mendes</span>
+        <div class="depoimento-avatar">
+          <img src="uploads/ale-mendes-aluno-depoimento-larun.jpg" alt="Ale Mendes, aluno LARUN, na Maratona de Berlim e UpHill de 42km" loading="lazy" decoding="async">
         </div>
         <div class="depoimento-content">
           <span class="depoimento-badge">Berlim</span>
+          <span class="depoimento-signature">Ale Mendes</span>
           <h3>Pés e joelhos quase tiraram a maratona</h3>
           <p class="depoimento-desc">Hoje soma Maratona de Berlim e UpHill de 42km.</p>
         </div>
@@ -2845,14 +2821,12 @@
 
     <article class="depoimento-card">
       <div class="depoimento-top">
-        <div class="depoimento-photo">
-          <div class="depoimento-avatar">
-            <img src="uploads/claudia-sakamoto-aluna-depoimento-larun.jpg" alt="Cláudia Sakamoto, aluna LARUN, meia maratonista com ótimo condicionamento físico" loading="lazy" decoding="async">
-          </div>
-          <span class="depoimento-signature">Cláudia Sakamoto</span>
+        <div class="depoimento-avatar">
+          <img src="uploads/claudia-sakamoto-aluna-depoimento-larun.jpg" alt="Cláudia Sakamoto, aluna LARUN, meia maratonista com ótimo condicionamento físico" loading="lazy" decoding="async">
         </div>
         <div class="depoimento-content">
           <span class="depoimento-badge">Meia maratona</span>
+          <span class="depoimento-signature">Cláudia Sakamoto</span>
           <h3>Nenhum esporte anterior tinha dado certo</h3>
           <p class="depoimento-desc">Hoje é meia maratonista, com ótimo condicionamento físico.</p>
         </div>
