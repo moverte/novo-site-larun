@@ -909,9 +909,9 @@
   }
   @media (max-width: 540px) {
     .fases-tabs { flex-wrap: nowrap; gap: 8px; }
-    .fase-tab { font-size: 0.78rem; padding: 10px 14px; }
+    .fase-tab, .periodo-tab { font-size: 0.78rem; padding: 10px 14px; }
   }
-  .fase-tab {
+  .fase-tab, .periodo-tab {
     font-family: var(--font-ui);
     font-weight: 600;
     font-size: 0.92rem;
@@ -923,8 +923,8 @@
     cursor: pointer;
     transition: background 200ms var(--ease-base), color 200ms var(--ease-base), border-color 200ms var(--ease-base);
   }
-  .fase-tab:hover { border-color: var(--color-blue); color: var(--color-blue); }
-  .fase-tab.active {
+  .fase-tab:hover, .periodo-tab:hover { border-color: var(--color-blue); color: var(--color-blue); }
+  .fase-tab.active, .periodo-tab.active {
     background: var(--color-blue);
     border-color: var(--color-blue);
     color: var(--color-white);
@@ -1531,7 +1531,7 @@
 
   .planos-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 20px;
     align-items: start;
   }
@@ -1623,6 +1623,7 @@
     gap: 6px;
     margin-bottom: 5px;
   }
+  .plano-preco-principal[hidden] { display: none; }
   .plano-valor {
     font-family: var(--font-display);
     font-weight: 900;
@@ -2918,87 +2919,77 @@
     <div class="planos-header">
       <p class="eyebrow planos-eyebrow">Planos</p>
       <h2 class="planos-headline">Um plano para cada momento da sua corrida.</h2>
-      <p class="planos-subtext">O plano certo é definido no RaioX. Os valores abaixo são a partir de, no pagamento anual via PIX.</p>
+      <p class="planos-subtext">O plano certo é definido no RaioX. Veja o valor mensal ou anual abaixo.</p>
+    </div>
+
+    <p class="fases-tabs-hint">Como prefere pagar?</p>
+    <div class="fases-tabs planos-periodo-toggle" role="tablist" aria-label="Periodicidade do plano">
+      <button type="button" class="periodo-tab active" role="tab" aria-selected="true" data-periodo="anual">Anual</button>
+      <button type="button" class="periodo-tab" role="tab" aria-selected="false" data-periodo="mensal">Mensal</button>
     </div>
 
     <div class="planos-grid">
 
       <article class="plano-card">
-        <span class="plano-fase">Fase 1</span>
-        <h3 class="plano-nome">START RUN</h3>
-        <p class="plano-desc">Base e estrutura para iniciantes que buscam correr com segurança.</p>
+        <h3 class="plano-nome">ESSENCIAL</h3>
+        <p class="plano-desc">Treinos em grupo para quem já corre e quer estrutura.</p>
         <div class="plano-preco">
-          <div class="plano-preco-principal">
-            <span class="plano-valor">R$ 159</span>
+          <div class="plano-preco-principal" data-periodo-preco="anual">
+            <span class="plano-valor">R$ 229</span>
             <span class="plano-periodo">/mês no anual</span>
           </div>
-          <span class="plano-mensal">R$ 199 mensal</span>
-        </div>
-        <ul class="plano-features">
-          <li><span class="plano-check" aria-hidden="true"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>Diagnóstico inicial</li>
-          <li><span class="plano-check" aria-hidden="true"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>Controle de carga</li>
-          <li><span class="plano-check" aria-hidden="true"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>Professor presente</li>
-        </ul>
-        <a href="#raiox" class="btn btn-pill btn-outline-blue plano-cta" data-cta-position="planos-startrun">Conhecer no RaioX</a>
-      </article>
-
-      <article class="plano-card plano-card--destaque">
-        <span class="plano-badge">Mais procurado</span>
-        <span class="plano-fase">Fase 1+</span>
-        <h3 class="plano-nome">EVORUN 10</h3>
-        <p class="plano-desc">Foco em 5K e 10K com evolução estruturada e progressão real.</p>
-        <div class="plano-preco">
-          <div class="plano-preco-principal">
-            <span class="plano-valor">R$ 179</span>
-            <span class="plano-periodo">/mês no anual</span>
+          <div class="plano-preco-principal" data-periodo-preco="mensal" hidden>
+            <span class="plano-valor">R$ 259</span>
+            <span class="plano-periodo">/mês</span>
           </div>
-          <span class="plano-mensal">R$ 209 mensal</span>
         </div>
         <ul class="plano-features">
-          <li><span class="plano-check" aria-hidden="true"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>Tudo do Start Run</li>
-          <li><span class="plano-check" aria-hidden="true"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>Educativos de corrida</li>
-          <li><span class="plano-check" aria-hidden="true"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>Progressão de volume</li>
-          <li><span class="plano-check" aria-hidden="true"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>Acesso ao grupo de corrida</li>
+          <li><span class="plano-check" aria-hidden="true"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>Treino em grupo até 2x por semana</li>
+          <li><span class="plano-check" aria-hidden="true"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>Planilha de treino</li>
         </ul>
-        <a href="#raiox" class="btn btn-pill btn-green plano-cta" data-cta-position="planos-evorun10">Conhecer no RaioX</a>
+        <a href="#raiox" class="btn btn-pill btn-outline-blue plano-cta" data-cta-position="planos-essencial">Conhecer no RaioX</a>
       </article>
 
       <article class="plano-card">
-        <span class="plano-fase">Fases 2 e 3</span>
-        <h3 class="plano-nome">ENDURANCE</h3>
-        <p class="plano-desc">Preparação para meia maratona e maratona. 21K / 42K.</p>
+        <h3 class="plano-nome">PERFORMANCE</h3>
+        <p class="plano-desc">Studio e grupo combinados para evoluir com consistência.</p>
         <div class="plano-preco">
-          <div class="plano-preco-principal">
-            <span class="plano-valor">R$ 209</span>
+          <div class="plano-preco-principal" data-periodo-preco="anual">
+            <span class="plano-valor">R$ 339</span>
             <span class="plano-periodo">/mês no anual</span>
           </div>
-          <span class="plano-mensal">R$ 249 mensal</span>
+          <div class="plano-preco-principal" data-periodo-preco="mensal" hidden>
+            <span class="plano-valor">R$ 399</span>
+            <span class="plano-periodo">/mês</span>
+          </div>
         </div>
         <ul class="plano-features">
-          <li><span class="plano-check" aria-hidden="true"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>Periodização avançada</li>
-          <li><span class="plano-check" aria-hidden="true"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>Pliometria e velocidade</li>
-          <li><span class="plano-check" aria-hidden="true"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>Estratégia de prova</li>
+          <li><span class="plano-check" aria-hidden="true"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>Treino no studio até 2x por semana</li>
+          <li><span class="plano-check" aria-hidden="true"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>Treino em grupo até 2x por semana</li>
+          <li><span class="plano-check" aria-hidden="true"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>Planilha de treino estruturada</li>
         </ul>
-        <a href="#raiox" class="btn btn-pill btn-outline-blue plano-cta" data-cta-position="planos-endurance">Conhecer no RaioX</a>
+        <a href="#raiox" class="btn btn-pill btn-outline-blue plano-cta" data-cta-position="planos-performance">Conhecer no RaioX</a>
       </article>
 
       <article class="plano-card">
-        <span class="plano-fase">Trail</span>
-        <h3 class="plano-nome">TRAIL FULL</h3>
-        <p class="plano-desc">Preparação completa para trail running competitivo.</p>
+        <h3 class="plano-nome">ELITE</h3>
+        <p class="plano-desc">Acompanhamento próximo para quem quer o máximo de suporte.</p>
         <div class="plano-preco">
-          <div class="plano-preco-principal">
-            <span class="plano-valor">R$ 250</span>
+          <div class="plano-preco-principal" data-periodo-preco="anual">
+            <span class="plano-valor">R$ 439</span>
             <span class="plano-periodo">/mês no anual</span>
           </div>
-          <span class="plano-mensal">R$ 290 mensal</span>
+          <div class="plano-preco-principal" data-periodo-preco="mensal" hidden>
+            <span class="plano-valor">R$ 499</span>
+            <span class="plano-periodo">/mês</span>
+          </div>
         </div>
         <ul class="plano-features">
-          <li><span class="plano-check" aria-hidden="true"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>Treino específico de trilha</li>
-          <li><span class="plano-check" aria-hidden="true"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>Força e resistência</li>
-          <li><span class="plano-check" aria-hidden="true"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>Preparação para terreno</li>
+          <li><span class="plano-check" aria-hidden="true"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>Treino no studio até 5x por semana</li>
+          <li><span class="plano-check" aria-hidden="true"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>Treino em grupo até 4x por semana</li>
+          <li><span class="plano-check" aria-hidden="true"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>Acompanhamento dinâmico e monitorado</li>
         </ul>
-        <a href="#raiox" class="btn btn-pill btn-outline-blue plano-cta" data-cta-position="planos-trailfull">Conhecer no RaioX</a>
+        <a href="#raiox" class="btn btn-pill btn-outline-blue plano-cta" data-cta-position="planos-elite">Conhecer no RaioX</a>
       </article>
 
     </div>
@@ -3055,7 +3046,7 @@
         <div class="faq-card-body">
           <h3>É caro.</h3>
           <div class="faq-title-line"></div>
-          <p>Pensa no outro lado: quanto custa uma fisioterapia? Quanto custa ficar parado 3 meses por lesão? A LARUN é investimento em longevidade. O plano mais acessível começa em R$ 159/mês. O custo de treinar sem diagnóstico costuma ser medido em semanas de afastamento — não em mensalidade.</p>
+          <p>Pensa no outro lado: quanto custa uma fisioterapia? Quanto custa ficar parado 3 meses por lesão? A LARUN é investimento em longevidade. O plano mais acessível começa em R$ 229/mês. O custo de treinar sem diagnóstico costuma ser medido em semanas de afastamento — não em mensalidade.</p>
         </div>
       </article>
 
@@ -3533,6 +3524,30 @@
     tabs.forEach(function (tab) {
       tab.addEventListener('click', function () {
         activate(tab.getAttribute('data-fase'));
+      });
+    });
+  })();
+
+  // ===== PLANOS: troca de periodicidade (mensal/anual) =====
+  (function () {
+    var periodoTabs = Array.prototype.slice.call(document.querySelectorAll('.periodo-tab'));
+    var precos = Array.prototype.slice.call(document.querySelectorAll('[data-periodo-preco]'));
+    if (!periodoTabs.length) return;
+
+    function activatePeriodo(periodo) {
+      periodoTabs.forEach(function (tab) {
+        var isActive = tab.getAttribute('data-periodo') === periodo;
+        tab.classList.toggle('active', isActive);
+        tab.setAttribute('aria-selected', isActive ? 'true' : 'false');
+      });
+      precos.forEach(function (bloco) {
+        bloco.hidden = bloco.getAttribute('data-periodo-preco') !== periodo;
+      });
+    }
+
+    periodoTabs.forEach(function (tab) {
+      tab.addEventListener('click', function () {
+        activatePeriodo(tab.getAttribute('data-periodo'));
       });
     });
   })();
